@@ -57,17 +57,18 @@ Verify that the baselines are available in your dynamodb database
 
 ## Create lambda function to get baselines from dynamodb
 
+Create a new Lambda Function GetQualities to Get data from the Baselines table, using code from lambda/GetQualities.js
 
+## Create REST API to get data from baselines table by calling GetQualities lambda
+Enable CORS & Deploy
 
+## Update your URL in the interface/qualities.js
 
+qualities.js
 
+## Create a S3 Bucket
 
+Upload all files from interface folder to the newly created s3 bucket
 
-
-
-# Step 1
-
-# Step 2
-
-# Step 3
+Congratulations!! you are ready to go
 
