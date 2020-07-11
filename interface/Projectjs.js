@@ -1,7 +1,18 @@
 var next=1,count=0,i,current=0,Sub=1;
 var element;
+$("#Selection_count").text(count+fcount());
+function fcount(){
+    var msg=""
+    if(Sub==1)
+    msg="/24+";
+    else if(Sub==2)
+    msg="/24";
+    else if(Sub==3)
+    msg="/6";
+    return msg;
+}
 $(document).ready(function(){
-    $("#NoButton").click(function(){
+    $("#next").click(function(){
         for(i=next;i<(file_source.length-1);i++)
         {
             if(file_source[i].Level==(Sub+''))
@@ -18,17 +29,17 @@ $(document).ready(function(){
         $("#Quality_desc").text(file_source[next].Meaning)
         current=next;
         if(next==(file_source.length-1))
-        alert("Sorry, No More Qualities present now");    
+        ;    
         else
-        next++;
+        next++; 
     });
 });
 $(document).ready(function(){
-    $("#YesButton").click(function(){
+    $("#Yes").click(function(){
         if (Sub==2 && count==24)
-        alert("You can't select more than 24 qualities");
+        ;
         else if (Sub==3 && count==6)
-        alert("You can't select more than 6 qualities");
+        ;
         else
         {
             for(i=next;i<(file_source.length-1);i++)
@@ -52,9 +63,8 @@ $(document).ready(function(){
                     $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
                     file_source[current][2]='1';
                     count++;
-                    document.getElementById("Selection_count").textContent=count+"";
+                    document.getElementById("Selection_count").textContent=count+fcount();
                 }
-                alert("Sorry, No More Qualities present now"); 
                 current=next;
             }   
             else
@@ -64,13 +74,13 @@ $(document).ready(function(){
                 current=next;
                 next++;
                 count++;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
             }
         }
     });
 });
 $(document).ready(function(){
-    $("#BackButton").click(function(){
+    $("#prev").click(function(){
         next=current-1;
         for (i=next;i>=0; i--) 
         {
@@ -86,7 +96,7 @@ $(document).ready(function(){
         }
         if(next==-1)
         {
-        alert("Sorry, No More Qualities present now");
+        ;
         next=current+1;
         }
         else
@@ -104,20 +114,19 @@ function labelfunc(num)
     element.parentNode.removeChild(element);
     file_source[num].Status='0';
     count--;
-    document.getElementById("Selection_count").textContent=count+"";
+    document.getElementById("Selection_count").textContent=count+fcount();
 }
 $(document).ready(function(){
     $("#Sub").click(function(){
         if(Sub==1)
         {
             if(count<24)
-            alert("Please select atleast 24 qualities");
+            ;
             else if(count==24)
             {
-                alert("Your qualites are submitted, Now please select exact 6 qualities");
                 count=0;
                 Sub=Sub+2;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i].Status=='1')
@@ -143,10 +152,9 @@ $(document).ready(function(){
             }
             else
             {
-                alert("Your qualites are submitted, Now please select exact 24 qualities");
                 count=0;
                 Sub++;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i].Status=='1')
@@ -175,10 +183,9 @@ $(document).ready(function(){
         {
             if(count==24)
             {
-                alert("Your qualites are submitted, Now please select exact 6 qualities");
                 count=0;
                 Sub++;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent=count+fcount();
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i].Status=='1')
@@ -202,16 +209,16 @@ $(document).ready(function(){
                 current=next;
                 next++;
             }
-            else
-            alert("PLease select exact 24 qualities");
         }
         else if(Sub==3)
         {
             if(count==6)
             {
-                alert("Your qualites are submitted. Now order the top 6 qualites");
                 Sub++;
-                document.getElementById("Selection_count").textContent="Order top 6 qualites by giving top most quality the highest priority";
+                document.getElementById("Selection_count1").textContent="Order your qualities ";
+                document.getElementById("Selection_count1").style.height="25%";
+                document.getElementById("Selection_count1").style.textAlign="center";
+                document.getElementById("Selection_count1").style.padding="5px";
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i].Status=='1')
@@ -233,26 +240,24 @@ $(document).ready(function(){
                     }
                 }
             }
-            else
-            alert("PLease select exact 6 qualities");
         }
-        else if(Sub==4)
+    });
+});
+$(document).ready(function(){
+    $("#Sub2").click(function(){
+        if(Sub==4)
         {
-            alert("Congratulations, your qualities are submitted");
-            document.getElementById("Selection_count").textContent="Your top qualities are shown below";
+            
+            document.getElementById("Selection_count1").textContent="Congratulations!!!, This is who you are";
             var x = document.getElementById("orderit");
             x.style.display = "none";
             var m = document.getElementById("FinalTable");
             m.style.display = "block";
-            var n = document.getElementById("subm");
+            var n = document.getElementById("Sub2");
             n.style.display = "none";
             var idsInOrder = $("#sortable_quality").sortable("toArray");
             for(i=0;i<6;i++)
             $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]].Quality+'</th><th>'+file_source[idsInOrder[i]].Meaning+'</th></tr>');
-        }
-        else
-        {
-            alert("It is in the maintainence at the moment");
         }
     });
 });

@@ -5,39 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="ProjectStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Project</title>
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"></nav>
         <div class="header">
-            <h3><div class="row">
-                <div class="col-sm" id="Selection_count">0</div>
-            </div></h3>
+            <strong><div class="row">
+                <div class="col-sm" id="Selection_count1">Wings2Life</div>
+            </div></strong>
         </div>
         <div class="main" id='selectquality'>
             <div class="row">
                 <div class="col-sm-4">
-                    <h1><div class="row">
+                    <strong><div class="row">
                         <div class="col-sm" id="quality"></div>
-                    </div></h1> 
-                    <h4><div class="row" id="Quality_desc"></div></h4>
-                    <div class="row buttonrow">
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-danger" id="NoButton">
-                                <h1>&#10060;</h1>
-                            </button>
-                        </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-success" id="YesButton">
-                                <h1>&#x2713;</h1>
-                            </button>
-                        </div>
-                        <div class="col-sm">
-                            <button type="button" class="btn btn-primary" id="BackButton">
-                                <h1>&#8617;</h1>
-                            </button>
-                        </div>
+                    </div></strong>
+                    <div class="row" id="Quality_desc"></div>
+                    <div class="btn-group align-items-center" role="group">
+                        <button type="button" id="prev" class="btn btn-light"><i class="fa fa-caret-square-o-left fa-2x" aria-hidden="true"></i><span>Previous</span></button>
+                        <button type="button" id="Yes" class="btn btn-light"><i class="fa fa-check-circle fa-2x" aria-hidden="true"></i><span id="Selection_count">0/24+</span></button>
+                        <button type="button" id="next" class="btn btn-light"><i class="fa fa-caret-square-o-right fa-2x" aria-hidden="true"></i><span>Next</span></button>
+                        <button type="button" id="Sub" class="btn btn-light"><i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i><span>Submit</span></button>
                     </div>
                 </div>
                 <div class="col-sm-8" id="Second_Row"></div>
@@ -45,30 +34,25 @@
         </div>
         <div class="ordering" id="orderit">
             <ul id="sortable_quality"></ul>
+            <button type="button" id="Sub2" class="btn btn-secondary float-right">Submit</button>
         </div>
-        <div class='rTable' id="FinalTable">
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Quality Name</th>
-                    <th>Description with Example</th>
-                  </tr>
-                </thead>
-                <tbody id ="addquality"></tbody>
-              </table>
-        </div>
-        <div class="footer" id='subm'>
-            <div class="row">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-warning" id="Sub">
-                        <h1><div class="Submit_button">Submit</div></h1>
-                    </button>
-                </div>
+        <div class="table-responsive">
+            <div class='rTable' id="FinalTable">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addquality"></tbody>
+                </table>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="qualities.js"></script>
     <script src="Projectjs.js"></script>
