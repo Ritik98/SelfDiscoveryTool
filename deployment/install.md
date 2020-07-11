@@ -44,6 +44,19 @@ Go to the dynamodb and delete all the records from Baselines table
 
 Deploy the API and use the URL to upload your Baselines Data
 
+## Upload Baselines Data
+
+Update baslines.txt to keep the baselines you need
+
+replace  value of API_ENDPOINT in LoadBaselines.py with your URL
+
+execute LoadBaselines.py as 
+python LoadBaselines.py baselines.txt
+
+Verify that the baselines are available in your dynamodb database
+
+## Create lambda function to get baselines from dynamodb
+
 
 
 
