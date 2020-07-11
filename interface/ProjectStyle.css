@@ -1,0 +1,56 @@
+.row, .container {
+    empty-cells: hide;
+}
+h1,h2,h3,h4 {
+    border: none;
+}
+#Selection_count {
+    background-color: dodgerblue;
+    text-align: center;
+    color: white;
+    padding-top: 15px;
+    height: 80px;
+}
+#quality {
+    background-color: black;
+    color:white;
+    text-align: center;
+    height: 80px;
+    padding-top: 15px;
+}
+#Quality_desc{
+    background-color: grey;
+    height:220px;
+    color:white;
+    text-align: center;
+    padding-top: 15px;
+}
+#Second_Row{
+    background-color: #33DAFF;
+    color:white;
+    padding: 15px;
+    height: 380 px;
+}
+#NoButton,#YesButton,#BackButton,#Sub {
+    width: 100%;
+}
+#orderit, #FinalTable {
+    display: none;
+}
+#sortable_quality {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+    width: 25%; 
+    display: inline;
+}
+#sortable_quality li {
+    text-align: center;
+    height: 30px;
+    background: #cedc98;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+}
+#orderit {
+    height: 200px;
+}
