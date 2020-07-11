@@ -1,11 +1,12 @@
+import json
+import requests
 import sys
 from PyDictionary import PyDictionary
 dictionary=PyDictionary()
 quality = open(sys.argv[1])
-qualities = open(sys.argv[2],"w")
 desc=''
 temp= quality.readlines()
-qualities.write("var file_source=[\n")
+API_ENDPOINT  = 'Replace this with your API endpoint'
 for x in range(len(temp)):
     name=temp[x].rstrip("\n")
     try:
@@ -14,5 +15,5 @@ for x in range(len(temp)):
             desc=x[0]
     except:
         desc=""
-    qualities.write('[\n"'+name+'",\n"'+desc+'",\n"0",\n"1"\n],\n')
-qualities.write('[\n"",\n"",\n"0",\n"1"\n]\n];') 
+    data = {"qualityName":name, "qualityDesc":desc}
+    r = requests.post(API_ENDPOINT,data=json.dumps(data))
