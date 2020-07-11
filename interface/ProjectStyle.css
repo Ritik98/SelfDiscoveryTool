@@ -1,15 +1,10 @@
-.row, .container {
-    empty-cells: hide;
-}
-h1,h2,h3,h4 {
-    border: none;
-}
-#Selection_count {
-    background-color: dodgerblue;
+#Selection_count1 {
+    background-color: rgb(90, 90, 90);
     text-align: center;
     color: white;
     padding-top: 15px;
     height: 80px;
+    font-size:xx-large;
 }
 #quality {
     background-color: black;
@@ -17,23 +12,24 @@ h1,h2,h3,h4 {
     text-align: center;
     height: 80px;
     padding-top: 15px;
+    font-size:xx-large ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #Quality_desc{
-    background-color: grey;
+    background-color: black;
     height:220px;
     color:white;
     text-align: center;
-    padding-top: 15px;
+    padding: 15px ;
 }
 #Second_Row{
-    background-color: #33DAFF;
+    background-color:whitesmoke;
     color:white;
     padding: 15px;
-    height: 380 px;
+    height: 380px;
+    overflow:auto;
 }
-#NoButton,#YesButton,#BackButton,#Sub {
-    width: 100%;
-}
+
 #orderit, #FinalTable {
     display: none;
 }
@@ -41,16 +37,84 @@ h1,h2,h3,h4 {
     list-style-type: none;
     margin: 0; 
     padding: 0;
-    width: 25%; 
+    width:25%; 
     display: inline;
 }
 #sortable_quality li {
     text-align: center;
-    height: 30px;
-    background: #cedc98;
-    border: 1px solid #DDDDDD;
-    color: #333333;
+    height: 50px;
+    background: black;
+    border: 1px solid white;
+    color:white;
+    font-size: x-large;
+    padding-top: 5px;
 }
 #orderit {
     height: 200px;
+}
+
+
+
+.btn-group{
+    color:black;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    width:100%;
+    padding:4px;
+    
+}
+.Qual{
+    margin:10px;
+    background-color:black;
+    text-align:center;
+    width:20%;
+    display : inline;
+    color: white;
+}
+
+
+
+
+
+@media only screen and  (max-width: 414px) {
+    #Second_Row {
+        overflow-y: auto;
+        overflow-x:hidden;
+        padding:10px;
+        margin:4px 4px;
+        height:100%;
+        
+    }
+    .btn-group{
+        color:#4f5253;
+        align-items:center;
+    }
+
+    #Selection_count{
+        height:50px;
+        padding-top:5px;
+        font-size:x-large;
+    }
+
+    #quality{
+        height:60px;
+        padding-top:5px;
+    }
+
+    #Quality_desc{
+        height:160px;
+        overflow-y: auto;
+        overflow-x:hidden;
+        z-index:-1;
+        width:auto;
+    }
+    
+    .Qual{
+        margin:2px;
+        
+        text-align:center;
+        width:100%;
+    }
 }
