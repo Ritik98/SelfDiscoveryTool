@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="ProjectStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Project</title>
+    <title>Wings2Life - Discover Yourself</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <strong><div class="row">
-                <div class="col-sm" id="Selection_count1">Wings2Life</div>
+                <div class="col-sm" id="Selection_count2">
+				<span ><img src="images/wings2life.png"></span>
+				<span class="abc" id="Selection_count1">Select Your Baselines</p>
+				</div>
             </div></strong>
         </div>
         <div class="main" id='selectquality'>
@@ -24,8 +27,8 @@
                     <div class="row" id="Quality_desc"></div>
                     <div class="btn-group align-items-center" role="group">
                         <button type="button" id="prev" class="btn btn-light"><i class="fa fa-caret-square-o-left fa-2x" aria-hidden="true"></i><span>Previous</span></button>
-                        <button type="button" id="Yes" class="btn btn-light"><i class="fa fa-check-circle fa-2x" aria-hidden="true"></i><span id="Selection_count">0/24+</span></button>
-                        <button type="button" id="next" class="btn btn-light"><i class="fa fa-caret-square-o-right fa-2x" aria-hidden="true"></i><span>Next</span></button>
+                        <button type="button" id="Yes" class="btn btn-light"><i class="fa fa-check-circle fa-2x" aria-hidden="true"></i><span id="currentCount"></span></button>
+                        <button type="button" id="nextButton" class="btn btn-light"><i class="fa fa-caret-square-o-right fa-2x" aria-hidden="true"></i><span>Next</span></button>
                         <button type="button" id="Sub" class="btn btn-light"><i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i><span>Submit</span></button>
                     </div>
                 </div>
