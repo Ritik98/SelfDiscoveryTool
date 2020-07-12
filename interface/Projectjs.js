@@ -1,92 +1,90 @@
-var next=1,count=0,i,current=0,Sub=1;
-var element;
-$("#Selection_count").text(count+fcount());
-function fcount(){
-    var msg=""
-    if(Sub==1)
-    msg="/24+";
-    else if(Sub==2)
-    msg="/24";
-    else if(Sub==3)
-    msg="/6";
-    return msg;
+var next=1,selected=0,i,current=0,Level=1,element;
+//----------------------------------------------------------------------------------------------------
+
+
+function levelCount(){
+    return Level==1?"/24+":Level==2?"/24":"/6";
 }
-$(document).ready(function(){
-    $("#next").click(function(){
-        for(i=next;i<(file_source.length-1);i++)
+$("#currentCount").text(selected+levelCount());
+
+
+//------------------------------------------------------------------------------------------
+
+function updateNext() {
+    for(i=next;i<baseLinesLength;i++)
+    {
+        if(baseLines[i].Level==(Level+''))
         {
-            if(file_source[i].Level==(Sub+''))
-            {
-                if(file_source[i].Status=="1")
-                next++;
-                else
-                break;
-            }
-            else
+            if(baseLines[i].Status=="1")
             next++;
+            else
+            break;
         }
-        $("#quality").text(file_source[next].Quality)
-        $("#Quality_desc").text(file_source[next].Meaning)
-        current=next;
-        if(next==(file_source.length-1))
-        ;    
         else
-        next++; 
-    });
+        next++;
+    }
+}
+
+//------------------------------------------------------------------------------------------
+
+function printNext() {
+    $("#quality").text(baseLines[next].Quality);
+    $("#Quality_desc").text(baseLines[next].Meaning);
+}
+
+//-------------------------------------------------------------------------------------------
+
+function updateNextCurrent(){
+    current=next;
+    if(next!=baseLinesLength)
+    next++;
+}
+
+//-------------------------------------------------------------------------------------------
+
+$("#nextButton").click(function(){
+    updateNext();
+    printNext();
+    updateNextCurrent();         
 });
-$(document).ready(function(){
-    $("#Yes").click(function(){
-        if (Sub==2 && count==24)
-        ;
-        else if (Sub==3 && count==6)
-        ;
-        else
-        {
-            for(i=next;i<(file_source.length-1);i++)
-            {
-                if(file_source[i].Level==(Sub+''))
-                {
-                    if(file_source[i].Status=="1")
-                    next++;
-                    else
-                    break;
-                }
-                else
-                next++;
-            }    
-            $("#quality").text(file_source[next].Quality)
-            $("#Quality_desc").text(file_source[next].Meaning)
-            if(next==(file_source.length-1))
+
+//--------------------------------------------------------------------------------------------
+
+
+$("#Yes").click(function(){
+    if(!((Level==2 && selected==24) || (Level==3 && selected==6))){
+        updateNext();
+        printNext();
+            if(next==baseLinesLength)
             {
                 if(current!=next)
                 {
-                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
-                    file_source[current][2]='1';
-                    count++;
-                    document.getElementById("Selection_count").textContent=count+fcount();
+                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+baseLines[current].Quality+"</button>")
+                    baseLines[current][2]='1';
+                    selected++;
+                    document.getElementById("currentCount").textContent=selected+levelCount();
                 }
                 current=next;
             }   
             else
             {
-                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
-                file_source[current].Status='1';
+                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+baseLines[current].Quality+"</button>")
+                baseLines[current].Status='1';
                 current=next;
                 next++;
-                count++;
-                document.getElementById("Selection_count").textContent=count+fcount();
+                selected++;
+                document.getElementById("currentCount").textContent=selected+levelCount();
             }
         }
     });
-});
 $(document).ready(function(){
     $("#prev").click(function(){
         next=current-1;
         for (i=next;i>=0; i--) 
         {
-            if(file_source[i].Level==(Sub+''))
+            if(baseLines[i].Level==(Level+''))
             {
-                if(file_source[i].Status=='1')
+                if(baseLines[i].Status=='1')
                 next--;
                 else
                 break;
@@ -101,8 +99,8 @@ $(document).ready(function(){
         }
         else
         {
-            $("#quality").text(file_source[next].Quality)
-            $("#Quality_desc").text(file_source[next].Meaning)
+            $("#quality").text(baseLines[next].Quality)
+            $("#Quality_desc").text(baseLines[next].Meaning)
             current=next;
             next=current+1;
         }
@@ -112,119 +110,119 @@ function labelfunc(num)
 {
     element = document.getElementById('qual_'+num);
     element.parentNode.removeChild(element);
-    file_source[num].Status='0';
-    count--;
-    document.getElementById("Selection_count").textContent=count+fcount();
+    baseLines[num].Status='0';
+    selected--;
+    document.getElementById("currentCount").textContent=selected+levelCount();
 }
 $(document).ready(function(){
     $("#Sub").click(function(){
-        if(Sub==1)
+        if(Level==1)
         {
-            if(count<24)
+            if(selected<24)
             ;
-            else if(count==24)
+            else if(selected==24)
             {
-                count=0;
-                Sub=Sub+2;
-                document.getElementById("Selection_count").textContent=count+fcount();
-                for(i=0;i<(file_source.length-1);i++)
+                selected=0;
+                Level=Level+2;
+                document.getElementById("currentCount").textContent=selected+levelCount();
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Status=='1')
+                    if(baseLines[i].Status=='1')
                     {
-                        file_source[i].Level='3';
-                        file_source[i].Status='0';
+                        baseLines[i].Level='3';
+                        baseLines[i].Status='0';
                         element = document.getElementById('qual_'+i);
                         element.parentNode.removeChild(element);
                     }
                 }
-                for(i=0;i<(file_source.length-1);i++)
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Level==(Sub+''))
+                    if(baseLines[i].Level==(Level+''))
                     {
                         next=i;
                         break;
                     }
                 }
-                $("#quality").text(file_source[next].Quality)
-                $("#Quality_desc").text(file_source[next].Meaning)
+                $("#quality").text(baseLines[next].Quality)
+                $("#Quality_desc").text(baseLines[next].Meaning)
                 current=next;
                 next++;
             }
             else
             {
-                count=0;
-                Sub++;
-                document.getElementById("Selection_count").textContent=count+fcount();
-                for(i=0;i<(file_source.length-1);i++)
+                selected=0;
+                Level++;
+                document.getElementById("currentCount").textContent=selected+levelCount();
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Status=='1')
+                    if(baseLines[i].Status=='1')
                     {
-                        file_source[i].Level='2';
-                        file_source[i].Status='0';
+                        baseLines[i].Level='2';
+                        baseLines[i].Status='0';
                         element = document.getElementById('qual_'+i);
                         element.parentNode.removeChild(element);
                     }
                 }
-                for(i=0;i<(file_source.length-1);i++)
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Level==(Sub+''))
+                    if(baseLines[i].Level==(Level+''))
                     {
                         next=i;
                         break;
                     }
                 }
-                $("#quality").text(file_source[next].Quality)
-                $("#Quality_desc").text(file_source[next].Meaning)
+                $("#quality").text(baseLines[next].Quality)
+                $("#Quality_desc").text(baseLines[next].Meaning)
                 current=next;
                 next++;
             }
         }
-        else if(Sub==2)
+        else if(Level==2)
         {
-            if(count==24)
+            if(selected==24)
             {
-                count=0;
-                Sub++;
-                document.getElementById("Selection_count").textContent=count+fcount();
-                for(i=0;i<(file_source.length-1);i++)
+                selected=0;
+                Level++;
+                document.getElementById("currentCount").textContent=selected+levelCount();
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Status=='1')
+                    if(baseLines[i].Status=='1')
                     {
-                        file_source[i].Level='3';
-                        file_source[i].Status='0';
+                        baseLines[i].Level='3';
+                        baseLines[i].Status='0';
                         element = document.getElementById('qual_'+i);
                         element.parentNode.removeChild(element);
                     }
                 }
-                for(i=0;i<(file_source.length-1);i++)
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Level==(Sub+''))
+                    if(baseLines[i].Level==(Level+''))
                     {
                         next=i;
                         break;
                     }
                 }
-                $("#quality").text(file_source[next].Quality)
-                $("#Quality_desc").text(file_source[next].Meaning)
+                $("#quality").text(baseLines[next].Quality)
+                $("#Quality_desc").text(baseLines[next].Meaning)
                 current=next;
                 next++;
             }
         }
-        else if(Sub==3)
+        else if(Level==3)
         {
-            if(count==6)
+            if(selected==6)
             {
-                Sub++;
+                Level++;
                 document.getElementById("Selection_count1").textContent="Order your qualities ";
                 document.getElementById("Selection_count1").style.height="25%";
                 document.getElementById("Selection_count1").style.textAlign="center";
                 document.getElementById("Selection_count1").style.padding="5px";
-                for(i=0;i<(file_source.length-1);i++)
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Status=='1')
+                    if(baseLines[i].Status=='1')
                     {
-                        file_source[i].Level='4';
-                        file_source[i].Status='0';
+                        baseLines[i].Level='4';
+                        baseLines[i].Status='0';
                     }
                 }
                 var x = document.getElementById("selectquality");
@@ -232,11 +230,11 @@ $(document).ready(function(){
                 var n = document.getElementById("orderit");
                 n.style.display = "block";
                 var x = document.createElement("UL");
-                for(i=0;i<(file_source.length-1);i++)
+                for(i=0;i<baseLinesLength;i++)
                 {
-                    if(file_source[i].Level=='4')
+                    if(baseLines[i].Level=='4')
                     {
-                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i].Quality+'</li>');
+                        $("#sortable_quality").append('<li id="'+i+'">'+baseLines[i].Quality+'</li>');
                     }
                 }
             }
@@ -245,7 +243,7 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
     $("#Sub2").click(function(){
-        if(Sub==4)
+        if(Level==4)
         {
             
             document.getElementById("Selection_count1").textContent="Congratulations!!!, This is who you are";
@@ -257,7 +255,7 @@ $(document).ready(function(){
             n.style.display = "none";
             var idsInOrder = $("#sortable_quality").sortable("toArray");
             for(i=0;i<6;i++)
-            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]].Quality+'</th><th>'+file_source[idsInOrder[i]].Meaning+'</th></tr>');
+            $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Quality+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
         }
     });
 });
