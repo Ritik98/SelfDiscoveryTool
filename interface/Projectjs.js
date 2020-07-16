@@ -1,6 +1,8 @@
 var next=1,selected=0,i,current=0,Level=1,element;
 //----------------------------------------------------------------------------------------------------
-
+function myFunction() {
+    alert("Hello World");
+}
 
 function levelCount(){
     return Level==1?"/24+":Level==2?"/24":"/6";
@@ -42,11 +44,11 @@ function updateNextCurrent(){
 
 //-------------------------------------------------------------------------------------------
 
-$("#nextButton").click(function(){
+function mynext(){
     updateNext();
     printNext();
     updateNextCurrent();         
-});
+}
 
 //--------------------------------------------------------------------------------------------
 
