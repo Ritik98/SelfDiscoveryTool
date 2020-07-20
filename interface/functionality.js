@@ -1,8 +1,8 @@
 var baseLines,baseLinesLength,i,selected=0,level=1;
 var configuration = {
-	branding: {"name" : "XYZ cmpany" , "title" : "slect you codes"},
+	branding: {"name" : "XYZ cmpany" , "title" : "select you codes"},
 	levels : 3,
-	levelDetails: [{count:24,rule: "minimum"}, 
+	levelDetails: [{count:24 ,rule: "minimum" }, 
 				   {count:24, rule: "exact"},
                    {count:6, rule: "exact"}]
 }
@@ -10,8 +10,22 @@ var configuration = {
 //-------------------------------------------------------------------------------------------
 
 function popupMsg(){
-    $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines')
-    $("#myModal").modal('show');
+    if(level==1)
+    {
+        $('#modalmsg').text("Select as many words as you resonate with" )
+        $("#myModal").modal('show');
+        
+    }
+    else if(configuration.levels+1==level)
+    {
+        $('#modalmsg').text("Use drag and drop to arrange these baselines in the order of importance they hold for you" )
+        $("#myModal").modal('show');
+    }
+    else
+    {
+        $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines')
+        $("#myModal").modal('show');    
+    }
 }
 popupMsg();
 
@@ -27,7 +41,7 @@ $(document).ready(function() {
         baseLinesLength=baseLines.length;
         for (i = 0; i<baseLinesLength; i++) {
             $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Quality+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
-            $("#currentCount").text(selected+levelCount());
+            $("#currentCount").text(selected+  "/" + baseLinesLength);
 
         }
     });
@@ -41,6 +55,7 @@ function submitInitial(){
         rebootRemove();
         selected = 0 ;
         level++;
+        popupMsg();
         for(i=0;i<baseLinesLength;i++)
         {
             if(baseLines[i].Status==1)
@@ -52,7 +67,7 @@ function submitInitial(){
         if(configuration.levels>=level)
         {
         rebootAdd();
-        popupMsg();
+       
         $("#currentCount").text(selected+levelCount());
         }
         else
@@ -89,7 +104,7 @@ function baseLine(i){
         return;
     }
     if(baseLines[i].Status==0)
-    {   property.style.backgroundColor="#404040"
+    {   property.style.backgroundColor="#00cc00"
         baseLines[i].Status=1;
         selected++;
         $("#currentCount").text(selected+levelCount());
