@@ -2,8 +2,8 @@ var baseLines,baseLinesLength,i,selected=0,level=1;
 var configuration = {
 	branding: {"name" : "XYZ cmpany" , "title" : "slect you codes"},
 	levels : 3,
-	levelDetails: [{count:8 ,rule: "minimum"}, 
-				   {count:8, rule: "exact"},
+	levelDetails: [{count:24,rule: "minimum"}, 
+				   {count:24, rule: "exact"},
                    {count:6, rule: "exact"}]
 }
 
