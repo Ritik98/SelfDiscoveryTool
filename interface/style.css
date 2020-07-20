@@ -1,5 +1,9 @@
 #Submit_Initial, #Submit_Final ,.header,.footer{
     z-index: 1000;
+    background-color: black;
+}
+#Submit_Initial, #Submit_Final{
+    color:white;
 }
 .col-sm-2 {
     min-height: 0px;
@@ -9,7 +13,6 @@
 }
 .header {
     position: fixed;
-    background-color: black;
     width: 100%;
     padding:10px;
     font-size:large;
@@ -19,7 +22,7 @@
     left:0;
 }
 html,body {
-    background-color: turquoise;
+    background-color: hsl(0,0%,80%);
 }
 .main {
     padding:10% 4%;
@@ -68,6 +71,7 @@ html,body {
     bottom: 0;
     width: 100%;
     text-align: center;
+    
  }
 #btn_grp {
     justify-content: center;
