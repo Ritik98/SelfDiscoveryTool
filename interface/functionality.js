@@ -120,7 +120,7 @@ function levelCheck()
 //------------------------------------------------------------------------------------------
 
 function sumbitOrdering(){
-    document.getElementById("titleHead").textContent="Order your qualities ";
+    document.getElementById("titleHead").textContent="Arrange Baselines";
     var x = document.getElementById("Submit_Initial");
     x.style.display = "none";
     var n = document.getElementById("Submit_Final");
