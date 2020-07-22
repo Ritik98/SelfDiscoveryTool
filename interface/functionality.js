@@ -1,62 +1,16 @@
-var baseLines,baseLinesLength,i,selected=0,level=1;
-var configuration = {
-	branding: {"name" : "XYZ cmpany" , "title" : "select you codes"},
-	levels : 3,
-	levelDetails: [{count:24 ,rule: "minimum" }, 
-				   {count:24, rule: "exact"},
-                   {count:6, rule: "exact"}]
-}
+//--------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------
-
-function popupMsg(){
-    if(level==1)
-    {
-        $('#modalmsg').text("Select as many words as you resonate with" )
-        $("#myModal").modal('show');
-        
-    }
-    else if(configuration.levels+1==level)
-    {
-        $('#modalmsg').text("Use drag and drop to arrange these baselines in the order of importance they hold for you" )
-        $("#myModal").modal('show');
-    }
-    else
-    {
-        $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines')
-        $("#myModal").modal('show');    
-    }
+function displayCount()
+{
+    $("#currentCount").text(selected+levelCount());
 }
-popupMsg();
 
-
-//-------------------------------------------------------------------------------------------
-//Calling API and creating all the baseLines buttons with values
-$(document).ready(function() {
-    $.ajax({
-        url: "https://cn80zv9qg7.execute-api.ap-south-1.amazonaws.com/dev"
-    }).then(function(data) {
-        data.sort(dynamicSort("Quality"));
-        baseLines=data;
-        baseLinesLength=baseLines.length;
-        for (i = 0; i<baseLinesLength; i++) {
-            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Quality+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
-            $("#currentCount").text(selected+  "/" + baseLinesLength);
-
-        }
-    });
-});
-
-//---------------------------------------------------------------------------------------
-
-function submitInitial(){
-    if( levelCheck()=="true")
-    {
-        rebootRemove();
-        selected = 0 ;
-        level++;
-        popupMsg();
-        for(i=0;i<baseLinesLength;i++)
+function updateStatusLevel()
+{
+    selected = 0 ;
+    level++;
+    for(i=0;i<baseLinesLength;i++)
         {
             if(baseLines[i].Status==1)
             {
@@ -64,45 +18,18 @@ function submitInitial(){
                 baseLines[i].Status=0;
             }
         }
-        if(configuration.levels>=level)
-        {
-        rebootAdd();
-       
-        $("#currentCount").text(selected+levelCount());
-        }
-        else
-        {
-        sumbitOrdering();
-        }
- 
-    }
- }
+}
 
 //----------------------------------------------------------------------------------
 
-function submitFinal(){
-    document.getElementById("titleHead").textContent="Congratulations!!!, This is who you are";
-    var x = document.getElementById("orderit");
-    x.style.display = "none";
-    var m = document.getElementById("FinalTable");
-    m.style.display = "block";
-    var n = document.getElementById("Submit_Final");
-    n.style.display = "none";
-    var idsInOrder = $("#sortable_quality").sortable("toArray");
-    for(i=0;i<idsInOrder.length;i++)
-    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Quality+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
 
-}
 
 //-----------------------------------------------------------------------------------
 
 function baseLine(i){
     var property = document.getElementById('qual_'+i);
-    if(configuration.levelDetails[level-1].rule=="exact" && baseLines[i].Status==0)
-    {
-        if(configuration.levelDetails[level-1].count==selected)
+    if(configuration.levelDetails[level-1].rule=="exact" && baseLines[i].Status==0 && configuration.levelDetails[level-1].count==selected)
         return;
-    }
     if(baseLines[i].Status==0)
     {   property.style.backgroundColor="#00cc00"
         baseLines[i].Status=1;
@@ -121,10 +48,9 @@ function baseLine(i){
 //-----------------------------functions used within another functions-----------------------
 
 function levelCount(){
-    var temp="";
     if (configuration.levelDetails[level-1].rule=="minimum")
-    temp="+";
-    return "/"+configuration.levelDetails[level-1].count+temp;
+    return "/"+baseLinesLength;
+    return "/"+configuration.levelDetails[level-1].count;
 }
 
 //--------------------------------------------------------------------------------------
@@ -148,14 +74,16 @@ function dynamicSort(property) {
 
 //------------------------------------------------------------------------------------------------------
 
-function rebootRemove(){
+function removeBaseLines(){
     var element;
     for(i = 0 ; i<baseLinesLength ; i++)
-    {if(baseLines[i].Level==level)
-   { element = document.getElementById('qual_'+i);    
-    element.parentNode.removeChild(element);
-    element = document.getElementById('qualmeaning_'+i);
-    element.parentNode.removeChild(element);
+    {
+        if(baseLines[i].Level==level)
+    { 
+        element = document.getElementById('qual_'+i);    
+        element.parentNode.removeChild(element);
+        element = document.getElementById('qualmeaning_'+i);
+        element.parentNode.removeChild(element);
     }
 }
 
@@ -208,6 +136,7 @@ function sumbitOrdering(){
         }
     }
 }
+//--------------------------------------------------------------------------------------------
 $(function() {
     $( "#sortable_quality" ).sortable();
  });
