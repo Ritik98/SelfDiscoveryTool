@@ -2,9 +2,9 @@ var baseLines,baseLinesLength,i,selected=0,level=1;
 var configuration = {
 	branding: {"name" : "XYZ cmpany" , "title" : "select you codes"},
 	levels : 3,
-	levelDetails: [{count:4 ,rule: "minimum" }, 
-				   {count:4, rule: "exact"},
-                   {count:2, rule: "exact"}]
+	levelDetails: [{count:24 ,rule: "minimum" }, 
+				   {count:24, rule: "exact"},
+                   {count:6, rule: "exact"}]
 }
 //------------------------------------------------------------------------------------------
 //constant elements
