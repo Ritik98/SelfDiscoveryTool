@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Wings2Life</title>
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        
+<!---------                                Header                                  ------------->
+
+        <div class="header">
+			<div id="icon"><img src="images/wings2life.png"></div>
+            <div id="titleHead">Select Your Baselines</div>
+        </div>
+
+<!----------                              Modal message                              -------------->
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><span ><img src="images/wings2life.png"></span>Wings2Life</h4>
+            </div>
+            <div class="modal-body">
+				<p id="modalmsg"></p>
+                
+                <button type="submit"  data-dismiss="modal" class="btn btn-primary">Ok</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------                               Main                                    --------------->
+
+        <div class="main">
+            <div class="ordering" id="orderit">
+                <ul id="sortable_quality"></ul>
+            </div>
+            <div class='table' id="FinalTable">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addquality"></tbody>
+                </table>
+            </div>
+            <div class="btn-group row" id="btn_grp"></div>
+        </div>
+
+<!------                                 footer                           --------------->
+
+        <footer class="footer">
+            <button type="button" class="btn btn-dark btn-lg btn-block" id="Submit_Initial" onclick="submitInitial()">
+                <span >Submit</span>
+                <span id="currentCount"></span>
+            </button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="Submit_Final" onclick="submitFinal()">Submit</button>
+        </footer>
+    </div>
+
+<!---------                          Script Files                         -------------->    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="Initialization.js"></script>
+    <script src="Mainfunction.js"></script>
+    <script src="functionality.js"></script>
+ </body>
+</html>

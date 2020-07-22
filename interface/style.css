@@ -1,0 +1,103 @@
+#Submit_Initial, #Submit_Final ,.header,.footer{
+    z-index: 1000;
+    background-color: black;
+}
+#Submit_Initial, #Submit_Final{
+    color:white;
+}
+#icon{
+    width:25%;
+}
+
+#titleHead{
+    width:75%;
+    padding-top: 10px;
+}
+.col-sm-2 {
+    min-height: 0px;
+}
+.dropdown-menu {
+    z-index: 990;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    padding:10px;
+    font-size:large;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    left:0;
+    display:flex;
+    flex-wrap: nowrap;
+}
+html,body {
+    background-color: hsl(0,0%,80%);
+}
+.main {
+    padding:10% 4%;
+    
+}
+.QualMeaning {
+    margin-top:20px;
+    margin-left: 0px;
+    padding: 5px 5px;
+    background-color: blue;
+    color:cornsilk;
+    
+}
+.Qual{
+    width: 150px;
+    margin-top:20px;
+    margin-right: 0px;
+    text-align:center;
+    padding: 5px 5px;
+    background-color: blue;
+    color: cornsilk;
+}
+
+#dropdown{
+    padding:5px;
+}
+#sortable_quality {
+    list-style-type: none;
+}
+#sortable_quality li {
+    text-align: center;
+    height: 50px;
+    max-width: 80%;
+    background: #0000FF;
+    border: 1px solid white;
+    color:white;
+    font-size: x-large; 
+    padding-top: 5px;
+}
+#orderit ,#FinalTable ,#Submit_Final{
+    display: none;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    
+ }
+#btn_grp {
+    justify-content: center;
+}
+ 
+
+ @media only screen and  (max-width:  1100px) {
+    .main {
+        padding:100px 3%;
+    }
+    .Qual{
+        min-width: 80px;
+        margin-left: 0px;
+        width:95px;
+    }
+    .QualMeaning{
+        margin-right: 0px;
+    }
+}
