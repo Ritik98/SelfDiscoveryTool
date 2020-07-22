@@ -6,7 +6,7 @@ let dynamodb = new AWS.DynamoDB.DocumentClient();
 exports.handler = async (event) => {
     // Extract values from event and format as strings
     let name = (`${event.qualityName}`);
-    let desc= JSON.stringify(`${event.qualityDesc}`);
+    let desc= (`${event.qualityDesc}`);
     let msg = JSON.stringify(`Your quality ${event.qualityName} with meaning ${event.qualityDesc} is recorded`);
 
     // Create JSON object with parameters for DynamoDB and store in a variable
