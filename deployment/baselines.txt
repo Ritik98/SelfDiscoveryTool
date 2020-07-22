@@ -1,5 +1,358 @@
-Abundance
-Acceptance
-Accomplished
-Accuracy
-Achievement
+Achievement,Something Very Good And Difficult That You Have Succeeded In Doing
+Adroitness,The Quality Of Being Skilful And Quick In Thinking Or Movement
+Agility,Able To Move Quickly And Easily
+Anticipation,A Feeling Of Excitement About Something That Is Going To Happen In The Near Future
+Assurance,A Promise To Tell Something To Someone Confidently Or Firmly Or A Promise To Cause Someone To Feel Certain By Removing Doubt
+Awareness,Knowing That Something Exists Or Having Knowledge Or Experience Of A Particular Thing
+Belonging,To Be In The Right Place Or (Of A Person) To Feel That You Are In The Right Place
+Brilliance,Great Intelligence Or Skill
+Care,The Process Of Protecting Someone Or Something And Providing What That Person Or Thing Needs
+Charity,The Quality Of Being Kind To People And Not Judging Them In A Severe Way
+Cleanliness,The State Of Being Clean Or The Act Of Keeping Things Clean
+Commitment,Willingness To Give Your Time And Energy To A Job Activity Or Something That You Believe In
+Confidence,A Feeling Of Having Little Doubt About Yourself And Your Abilities Or A Feeling Of Trust In Someone Or Something
+Consistency,The Quality Of Always Behaving Or Performing In A Similar Way Or Of Always Happening In A Similar Way
+Conviction,A Strong Belief That Is Not Likely To Change Or The Strong Feeling That Your Beliefs Are Right
+Correctness,The Quality Of Being In Agreement With The True Facts Or With What Is Generally Accepted
+Credibility,The Quality Of Being Believable Or Trustworthy
+Decorum,Behavior That Is Socially Correct Calm And Polite
+Desire,A Strong Feeling That You Want Something
+Dignity,The Quality Of A Person That Makes Him Or Her Deserving Of Respect Sometimes Shown In Behavior Or Appearance
+Discovery,The Act Of Finding Something That Had Not Been Known Before
+Drive,To Force Someone Or Something To Go Somewhere Or Do Something
+Ecstasy,A State Of Extreme Happiness Or Pleasure
+Elegance,The Quality Of Being Graceful And Attractive In Appearance Or Behaviour
+Enjoyment,A Feeling Of Happiness Or Pleasure 
+Exhilaration,Excitement And Happiness
+Exploration,The Act Of Traveling To A Place Or Searching A Place In Order To Learn About It
+Fairness,The Quality Of Treating People Equally Or In A Way That Is Right Or Reasonable
+Fashion,A Style That Is Popular At A Particular Time Especially In Clothes Hair Make-Up Etc.
+Financial,To Provide The Money Needed For Something To Happen
+Fluency,An Attractive Smooth Quality In The Way Someone Or Something Moves
+Friendliness,The Quality Of Treating People Equally Or In A Way That Is Right Or Reasonable
+Giving,The Act Of Providing Money For Something Especially To A Charity Or Other Good Cause
+Guidance,Help And Advice About How To Do Something Or About How To Deal With Problems
+Helpfulness,The Property Of Providing Useful Assistance
+Hopefulness,Full Of Hope
+Imagination,The Ability To Think Of New Ideas
+Inquisitiveness,The Quality Of Wanting To Discover As Much As You Can About Things Sometimes In A Way That Annoys People
+Intensity,The Quality Of Being Very Serious And Having Strong Emotions Or Opinions
+Inventiveness,The Quality Of Showing Or Having New And Original Ideas
+Keenness,The Quality Of Being Very Interested And Eager Or Wanting Something Very Much
+Liberation,Feeling Of Being Free
+Love,To Like Something Very Much
+Meekness,The Quality Of Being Quiet Gentle And Unwilling To Argue Or Express Your Opinions
+Motivation,Enthusiasm For Doing Something
+Open-minded,Ready To Entertain New Ideas
+Originality,The Quality Of Being Special And Interesting And Not The Same As Anything Or Anyone Else
+Perceptiveness,The Quality Of Being Very Good At Noticing And Understanding Things That Many People Do Not Notice
+Playfulness,The Quality Of Being Funny And Not Serious
+Potency,Strength Influence Or Effectiveness
+Practicality,Concerned With Actual Use Rather Than Theoretical Possibilities
+Privacy,The Quality Of Being Secluded From The Presence Or View Of Others
+Punctuality,The Quality Or Habit Of Adhering To An Appointed Time
+Recreation,An Activity That Diverts Or Amuses Or Stimulates
+Religiousness,Piety By Virtue Of Being Devout
+Respect,The Feeling You Show When You Accept That Different Customs Or Cultures Are Different From Your Own And Behave Towards Them In A Way That Would Not Cause Offence
+Rigor,The Quality Of Being Detailed Careful And Complete
+Satisfaction,Fulfilment Of One'S Wishes Expectations Or Needs Or The Pleasure Derived From This. "I Looked Round With Satisfaction"
+Sensitivity,The Quality Of Being Easily Influenced Changed Or Damaged Esp. By A Physical Activity Or Effect
+Sharing,Unselfishly Willing To Share With Others
+Simplicity,The Quality Of Being Plain Without Unnecessary Or Extra Things Or Decorations
+Soundness,The Quality Of Being Able To Be Trusted
+Spunk,Brave Determination And Confidence Even In Discouraging Situations
+Structure,To Plan Organize Or Arrange The Parts Of Something
+Teamwork,The Activity Of Working Together As A Team Or The Skills Needed To Do This
+Thrift,The Careful Use Of Money Especially By Avoiding Waste And Saving Money For The Future
+Transcendence,Experience That Goes Past Normal Limits Or The Ability To Achieve This
+Uniqueness,Being The Only Existing One Of Its Type Or More Generally Unusual Or Special In Some Way
+Virtue,A Good Moral Quality In A Person Or The General Quality Of Goodness In A Person
+Wealth,The State Of Being Rich And Affluent; Having A Plentiful Supply Of Material Goods And Money
+Wittiness,A Person Who Sees An Event Happening
+Abundance,The Property Of A More Than Adequate Quantity Or Supply
+Acknowledged,Recognized As Being Good Or Important.
+Adventure,Take A Risk In The Hope Of A Favorable Outcome
+Alertness,The Process Of Paying Close And Continuous Attention
+Appreciation,Recognition And Enjoyment Of The Good Qualities Of Someone Or Something
+Attentiveness,The Action Of Paying Close Attention To Something.
+Awe,A Feeling Of Reverential Respect Mixed With Fear Or Wonder.
+Benevolence,The Quality Of Being Well Meaning; Kindness.
+Calmness,Steadiness Of Mind Under Stress
+Carefulness,The Trait Of Being Cautious; Being Attentive To Possible Danger
+Charm,The Power Or Quality Of Delighting & Fascinating Others.
+Clear-mindedness,Having Or Showing A Clear Understanding
+Compassion,A Deep Awareness Of And Sympathy For Another'S Suffering
+Conformity,Compliance With Standards Rules
+Contentment,A State Of Happiness And Satisfaction.
+Conviviality,The Quality Of Being Friendly And Lively; Friendliness
+Courage,The Ability To Do Something That Frightens One
+Cunning,Having Skill In Achieving One'S Ends By Deceit Or Evasion.
+Deference,Polite Submission And Respect.
+Determination,The Quality Of Being Determined; Firmness Of Purpose.
+Diligence,Careful And Persistent Work Or Effort.
+Discretion,Speaking In Such A Way As To Avoid Causing Offence
+Duty,A Moral Or Legal Obligation; A Responsibility
+Education,The Process Of Receiving Or Giving Systematic Instruction 
+Empathy,The Ability To Understand And Share The Feelings Of Another.
+Entertainment,The Action Of Providing Or Being Provided With Amusement
+Expectancy,The State Of Thinking Or Hoping That Something Especially Something Good Will Happen
+Expressive,Effectively Conveying Thought Or Feeling.
+Faith,Complete Trust Or Confidence In Someone
+Fearlessness,Feeling No Fear
+Firmness,The Quality Of Having A Solid Almost Unyielding Surface Or Structure.
+Focus,Direct One'S Attention On Something
+Frugality,The Quality Of Being Economical With Money Or Food; Thriftiness.
+Grace,Smoothness And Elegance Of Movement.
+Happiness,The State Of Being Happy
+Heroism,Great Bravery.
+Hospitality,Friendly And Generous Reception And Entertainment Of Guests Visitors Or Strangers
+Impact,Action Of One Object Coming Forcibly Into Contact With Another.
+Insightful,Having Or Showing An Accurate And Deep Understanding; Perceptive
+Intimacy,Close Or Warm Friendship
+Investing,Make An Investment
+Kindness,The Quality Of Being Friendly Generous And Considerate.
+Liberty,State Of Being Free Within Society From Oppressive Restrictions Imposed By Authority
+Majesty,Impressiveness In Scale Or Proportion
+Mellowness,A Feeling Of Good Humor And Sympathy Through Maturity 
+Mysterious,Difficult Or Impossible To Understand Explain Or Identify.
+Openness,Lack Of Restriction; Accessibility
+Outlandish,Looking Or Sounding Bizarre Or Unfamiliar.
+Perfection,The State Of Being Without A Flaw Or Defect
+Pleasantness,The Feeling Caused By Agreeable Stimuli; One Pole Of A Continuum Of States Of Feeling
+Power,The Ability Or Right To Control/Influence People Or Events
+Pragmatism,A Pragmatic Attitude Or Policy.
+Proactive,Controlling A Situation Rather Than Just Responding To It
+Purity,Being Undiluted Or Unmixed 
+Refinement,The Process Of Removing Impurities Or Unwanted Elements
+Resilience,The Capacity To Recover Quickly From Difficulties
+Rest,Cease Work Or Movement In Order To Relax Sleep Or Recover Strength
+Sacredness,Devoted Or Dedicated To A Deity Or To Some Religious Purpose
+Security,The State Of Being Free From Danger Or Injury
+Sensuality,Expression Or Pursuit Of Physical Especially Sexual Pleasure
+Shrewdness,He Quality Of Having Or Showing Good Powers Of Judgement.
+Sincerity,An Earnest And Sincere Feeling
+Speed,Move Hurridely
+Stability,The Quality Or Attribute Of Being Firm And Steadfast
+Success,An Event That Accomplishes Its Intended Purpose
+Temperance,Moderation Or Voluntary Self-Restraint.
+Tidiness,State Or Quality Of Being Arranged Neatly And In Order.
+Trust,Have Confidence Or Faith In
+Unity,State Of Being United Or Joined As A Whole
+Vision,Ability To Think About Or Plan The Future With Imagination
+Wilfulness,Trait Of Being Prone To Disobedience And Lack Of Discipline
+Wonder,Desire To Know Something; Feel Curious
+Acceptance,The Action Of Consenting To Receive Or Undertake Something Offered.
+Activeness,The State Of Being Active
+Affection,A Positive Feeling Of Liking
+Altruism,The Quality Of Unselfish Concern For The Welfare Of Others
+Approachable,Friendly And Easy To Talk To
+Attractiveness,The Quality Of Being Pleasing Or Appealing To Senses
+Balance,Mental Or Emotional Stability
+Bliss,Perfect Happiness; Great Joy
+Camaraderie,Mutual Trust And Friendship Among People Who Spned A Lot Of Time Together
+Celebrity,A Widely Known Person
+Chastity,Abstaining From Sexual Relations (As Because Of Religious Vows
+Cleverness,The Quality Of Being Clever; Intelligence Or Shrewdness
+Completion,The Action Or Process Of Completing Or Finishing Something. 
+Congruency,Agreement Or Harmony;Compatibility 
+Continuity,Uninterrupted Connection Or Union
+Coolness,Calm And Unruffled Self-Assurance
+Courtesy,A Courteous Or Respectful Or Considerate Act
+Curiosity,A State In Which You Want To Learn More About Something
+Delight,Give Pleasure To Or Be Pleasing To
+Devotion,Love Loyalty Or Enthusiasm For A Person Or Activity
+Direction,A Course Along Which Someone Or Somthing Moves
+Diversity,The State Of Being Diverse; Varity
+Dynamism,The Quality Of Being Characterized By Vigorous Activity And Progress
+Effectiveness,Power To Be Effective; The Quality Of Being Able To Bring About An Effect
+Encouraging,Giving Courage Or Confidence Or Hope
+Enthusiasm,A Feeling Of Excitement
+Expediency,Doing What Is Convenient Rather Than What Is Morally Right.
+Extravagance,Lack Of Restraint In Spending Money Or Using Resources
+Fame,The State Or Quality Of Being Widely Honored And Acclaimed
+Ferocity,The Property Of Being Wild Or Turbulent
+Fitness,He Condition Of Being Physically Fit And Healthy
+Fortitude,Courage In Pain Or Adversity
+Fun,Activities That Are Enjoyable Or Amusing
+Gratitude,A Feeling Of Thankfulness And Appreciation
+Harmony,Compatibility In Opinion And Action
+Holiness,The Quality Of Being Holy
+Humility,A Disposition To Be Humble; A Lack Of False Pride
+Independence,Freedom From Control Or Influence Of Another Or Others
+Inspiration,Process Of Being Mentally Stimulated To Do Or Feel Something
+Intrepidness,A Quality Of Spirit That Enables You To Face Danger
+Joy,A Feeling Of Great Pleasure And Happiness
+Knowledge,Facts Information And Skills Acquired Through Experience Or Education
+Liveliness,The Quality Of Being Outgoing Energetic And Enthusiastic
+Making A Difference,To Do Something That Is Important  To Do Something That Helps People Or Makes The World A Better Place
+Meticulous,Showing Great Attention To Detail; Very Careful And Precise.
+Neatness,The Quality Or Condition Of Being Neat.
+Optimism,Hopefulness And Confidence About The Future Or The Success Of Something.
+Outrageous,Very Bold And Unusual And Rather Shocking.
+Perkiness,Cheerfulness That Bubbles To The Surface
+Pleasure,A Feeling Of Happy Satisfaction And Enjoyment.
+Persistence,The Continued Or Prolonged Existence Of Something.
+Precision,The Quality Condition Or Fact Of Being Exact And Accurate.
+Professional,Engaged In A Specified Activity As One'S Main Paid Occupation Rather Than As An Amateur.
+Realism,The Quality Or Fact Of Representing A Person Or Thing In A Way That Is Accurate And True To Life.
+Reflection,A Thing That Is A Consequence Of Or Arises From Something Else.
+Resolution,A Firm Decision To Do Or Not To Do Something.
+Restraint,A Measure Or Condition That Keeps Someone Or Something Under Control.
+Sacrifice,An Act Of Giving Up Something Valued For The Sake Of Something Else Regarded As More Important Or Worthy.
+Self-control,The Act Of Denying Yourself; Controlling Your Impulses
+Serenity,The State Of Being Calm Peaceful And Untroubled.
+Significance,The Quality Of Being Worthy Of Attention; Importance.
+Skilfulness,Having Or Showing Skill. A Skilful Surgeon; It Was Very Skilful Of You To Repair My Bicycle.
+Spirit,The Non-Physical Part Of A Person Which Is The Seat Of Emotions And Character; The Soul.
+Stealth,Avoiding Detection By Moving Carefully
+Supremacy,Power To Dominate Or Defeat
+Thankfulness,Warm Friendly Feelings Of Gratitude
+Timeliness,Being At The Right Time
+Truth,A Fact That Has Been Verified
+Usefulness,The Quality Of Being Of Practical Use
+Vitality,An Energetic Style
+Willingness,The Quality Or State Of Being Prepared To Do Something; Readiness.
+Youthfulness,The Freshness And Vitality Characteristic Of A Young Person
+Accuracy,The Quality Of Being Near To The True Value
+Adoration,A Feeling Of Profound Love And Admiration
+Aggressive,Bold Assertive And Forceful
+Amusement,A Feeling Of Delight At Being Entertained
+Assertiveness,Confident & Forceful Behaviour
+Availability,Easily Accessable
+Being The Best,Desire To Be The Best In All Situations
+Bravery,Courageous Behaviour Or Character.
+Capability,The Power Or Ability To Do Something.
+Challenge,Dispute The Truth Or Validity Of.
+Clarity,Free From Obscurity And Easy To Understand; The Comprehensibility Of Clear Expression
+Comfort,A State Of Physical Ease And Freedom From Pain Or Constraint.
+Concentration,The Action Or Power Of Focusing All One'S Attention.
+Consciousness,An Alert Cognitive State In Which You Are Aware Of Yourself And Your Situation
+Control,The Power To Influence
+Cordiality,Warm And Friendly.
+Creativity,The Ability To Create
+Decisiveness,The Ability To Make Decisions Quickly And Effectively.
+Depth,Extensive And Detailed
+Dexterity,Skill In Performing Tasks Especially With The Hands.
+Discipline,The Practice Of Training People To Obey Rules Or A Code Of Behaviour Using Punishment To Correct Disobedience.
+Dreaming,Have A Daydream; Indulge In A Fantasy
+Economy,Offering Good Value For Money.
+Elation,Great Happiness And Exhilaration.
+Energy,The Strength And Vitality Required For Sustained Physical Or Mental Activity.
+Excitement,The Feeling Of Lively And Cheerful Joy
+Expertise,Skillfulness By Virtue Of Possessing Special Knowledge
+Exuberance,The Quality Of Being Full Of Energy Excitement
+Fascination,The State Of Being Intensely Interested (As By Awe Or Terror
+Fierceness,The Property Of Being Wild Or Turbulent
+Flow,Move Or Progress Freely As If In A Stream
+Freedom,The Condition Of Being Free; The Power To Act Or Speak Or Think Without Externally Imposed Restraints
+Gentility,Social Superiority As Demonstrated By Polite And Respectable Manners
+Growth,The Process Of Developing Physically Mentally Or Spiritually. Keeping A Journal Can Be A Vital Step In Our Personal Growth
+Heart,The Vital Part Or Essence.
+Honor,High Respect; Great Esteem.
+Hygiene,A Condition Promoting Sanitary Practices
+Ingenuity,The Quality Of Being Clever Original And Inventive.
+Intelligence,The Ability To Comprehend; To Understand And Profit From Experience
+Intuition,Instinctive Knowing (Without The Use Of Rational Processes
+Justice,The Quality Of Being Just Or Fair
+Learning,Gain Knowledge Or Skills
+Longevity,Duration Of Service
+Maturity,The State Fact Or Period Of Being Mature.
+Modesty,The Quality Of Being Relatively Moderate Limited Or Small In Amount 
+Obedience,The Act Of Obeying; Dutiful Or Submissive Behavior With Respect To Another Person
+Organization,A Group Of People Who Work Together
+Peace,Freedom From Disturbance; Tranquillity.
+Piety,The Quality Of Being Religious Or Reverent.
+Popularity,The Quality Of Being Widely Admired Or Accepted Or Sought After
+Philanthropy,The Desire To Promote The Welfare Of Others 
+Presence,The State Of Being Present; Current Existence
+Prudence,The Quality Of Being Prudent; Cautiousness.
+Recognition,Acknowledgement Of The Existence Validity 
+Reliability,The Quality Of Being Dependable Or Reliable
+Resourceful,Having Inner Resources; Adroit Or Imaginative
+Richness,The Property Of Being Extremely Abundant
+Saintliness,The Quality Of Resembling A Saint
+Self-reliance,Reliance On One'S Own Powers And Resources
+Sexuality,Capacity For Sexual Feelings.
+Silliness,Lack Of Common Sense Or Judgement; Foolishness.
+Solitude,A State Of Social Isolation
+Spontaneity,The Quality Of Being Spontaneous And Coming From Natural Feelings Without Constraint
+Strength,The Property Of Being Physically Or Mentally Strong
+Synergy,The Interaction Or Cooperation Of Two Or More Organizations Substances 
+Thoughtful,Absorbed In Or Involving Thought.
+Tranquillity,An Untroubled State; Free From Disturbances
+Unflappability,Not Easily Upset Or Confused Especially In A Crisis; Imperturbable.
+Variety,The Quality Or State Of Being Different Or Diverse;
+Watchfulness,The Process Of Paying Close And Continuous Attention
+Wisdom,The Fact Of Being Based On Sensible Or Wise Thinking.
+Accomplished,Able To Do Or Finish Something Successfully
+Adaptability,An Ability Or Willingness To Change In Order To Suit Different Conditions
+Affluence,The State Of Having A Lot Of Money And Possessions
+Ambition,A Strong Desire For Success Achievement Power Or Wealth
+Articulate,Expressing Yourself Easily Or Characterized By Clear Expressive Language
+Audacity,Courage Or Confidence Of A Kind That Other People Find Shocking Or Rude
+Beauty,The Qualities That Give Pleasure To The Senses
+Boldness,A Brave And Confident Way Of Behaving That Shows No Fear
+Candor,The Quality Of Being Honest And Telling The Truth Especially About A Difficult Or Embarrassing Subject
+Certainty,The State Of Being Completely Confident Or Having No Doubt About Something
+Cheerfulness,A Bright Pleasant Quality That Makes You Feel Positive And Happy
+Closeness,A Feeling Of Being Intimate And Belonging Together
+Composure,The Feeling Of Being Calm Confident And In Control
+Connection,The State Of Being Related To Someone Or Something Else
+Contribution,Something That You Contribute Or Do To Help Produce Or Achieve Something Together With Other People Or To Help Make Something Successful
+Cooperation,To Act Or Work Together For A Particular Purpose Or To Be Helpful By Doing What Someone Asks You To Do
+Craftiness,Behaviour That Is Clever And Sometimes Also Slightly Dishonest
+Daring,The Quality Of Being Brave And Willing To Take Risks
+Dependability,The Quality Of Being Able To Be Trusted And Being Very Likely To Do What People Expect
+Devoutness,The Quality Of Believing Strongly In A Religion And Obeying All Its Rules Or Principles
+Directness,The Quality Of Saying What You Think In A Very Honest Way Without Worrying About Other People'S Opinions
+Dominance,The Quality Of Being More Important Strong Or Successful Than Anything Else Of The Same Type
+Eagerness,Wanting Very Much To Do Or Have Something Especially Something Interesting Or Enjoyable
+Efficiency,The Condition Or Fact Of Producing The Results You Want Without Waste Or A Particular Way In Which This Is Done
+Endurance,The Ability To Keep Doing Something Difficult Unpleasant Or Painful For A Long Time
+Excellence,The Quality Of Excelling; Possessing Good Qualities In High Degree
+Experience,The Way That Something Happens And How It Makes You Feel
+Extroversion,The Quality Of Being Energetic And Not Shy And Enjoying Being With Other People
+Family,A Group Of People Who Are Related To Each Other Such As A Mother A Father And Their Children
+Fidelity,Honest Or Lasting Support Or Loyalty 
+Flexibility,The Quality Of Being Able To Change Or Be Changed Easily According To The Situation
+Frankness,Honest Sincere And Truthful Even If There Is A Risk Of Causing Bad Feelings
+Gallantry,Polite And Kind Behaviour Towards Women Especially When In Public
+Gregarious,Liking To Be With Other People
+Health,The Condition Of The Body And The Degree To Which It Is Free From Illness Or The State Of Being Well
+Honesty,The Quality Of Being Honest
+Humor,The Ability To Be Amused By Something Seen Heard Or Thought About Sometimes Causing You To Smile Or Laugh Or The Quality In Something That Causes Such Amusement
+Industry,The Quality Of Regularly Working Hard
+Integrity,The Quality Of Being Honest And Having Strong Moral Principles That You Refuse To Change
+Introversion,The Quality Of Being Shy And Quiet And Preferring To Spend Time Alone Rather Than Often Being With Other People
+Judiciousness,Good Judgment
+Leadership,The Quality Or Ability That Makes A Person A Leader Or The Position Of Being A Leader
+Logic,A Particular Way Of Thinking Esp. One That Is Reasonable And Based On Good Judgment
+Mastery,Great Skill In A Particular Job Or Activity
+Mindfulness,The Practice Of Being Aware Of Your Body Mind And Feelings In The Present Moment Thought To Create A Feeling Of Calm
+Nerve,Get Ready For Something Difficult Or Unpleasant
+Order,The Way In Which People Or Things Are Arranged Either In Relation To One Another Or According To A Particular Characteristic
+Passion,A Powerful Emotion Or Its Expression Esp. The Emotion Of Love Anger Or Hate
+Perseverance,Continued Effort And Determination
+Poise,Behavior Or A Way Of Moving That Shows Calm Confidence
+Persuasive,Making You Want To Do Or Believe A Particular Thing
+Preparedness,The State Of Having Been Made Ready Or Prepared For Use Or Action (Especially Military Action)
+Prosperity,An Economic State Of Growth With Rising Profits And Full Employment
+Reason,Decide By Reasoning; Draw Or Come To A Conclusion
+Relaxation,To Become Or Cause Someone To Become Calm And Comfortable And Not Worried Or Nervous Or To Become Or Cause A Muscle Or The Body To Become Less Tight
+Resolve,To Solve Or End A Problem Or Difficulty
+Reverence,To Greatly Respect And Admire Someone Or Something
+Sagacity,The Quality Of Having Or Showing Understanding And The Ability To Make Good Judgments
+Selflessness,The Quality Of Unselfish Concern For The Welfare Of Others
+Service,Be Used By; As Of A Utility
+Silence,Cause To Be Quiet Or Not Talk
+Solidarity,Agreement Between And Support For The Members Of A Group Especially A Political Group
+Spirituality,The Quality That Involves Deep Feelings And Beliefs Of A Religious Nature Rather Than The Physical Parts Of Life
+Stillness,Total Lack Of Movement Or Changing Of Position
+Sympathy,An Inclination To Support Or Be Loyal To Or To Agree With An Opinion
+Thoroughness,Conscientiousness In Performing All Aspects Of A Task
+Traditionalism,Strict Adherence To Traditional Methods Or Teachings
+Understanding,Characterized By Understanding Based On Comprehension And Discernment And Empathy
+Utility,Ability To Satisfy A Particular Need; Usefulness
+Warmth,Friendly And Loving
+Winning,Friendly And Charming And Often Making People Like You
+Zeal,Great Enthusiasm Or Eagerness
