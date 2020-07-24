@@ -11,6 +11,8 @@ var configuration = {
 const orderElement= document.getElementById("orderit");
 const finalTableElement= document.getElementById("FinalTable");
 const submitFinalElement= document.getElementById("Submit_Final");
+const submitInitialElement = document.getElementById("Submit_Initial");
+const createElement = document.createElement("UL");
 //-------------------------------------------------------------------------------------------
 //Calling API and creating all the baseLines buttons with values
 $(document).ready(function() {

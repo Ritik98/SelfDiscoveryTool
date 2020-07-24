@@ -1,11 +1,33 @@
-//--------------------------------------------------------------------------------------------
+//-------------------------All secondary function-------------------------------------------------------------------
 
+
+//-------------------------------------------------------------------------------------------
+function displayTable()
+{
+    var x = orderElement;
+    x.style.display = "none";
+    var m = finalTableElement;
+    m.style.display = "block";
+    var n = submitFinalElement;
+    n.style.display = "none";
+}
 //-------------------------------------------------------------------------------------------
 function displayCount()
 {
     $("#currentCount").text(selected+levelCount());
 }
-
+//------------------------------popping up the message , giving instuction to user--------------------------------------------------------------
+function popup()
+ {
+    if(level==1)
+    $('#modalmsg').text("Select as many words as you resonate with" + "\n\n" + "Note : Select minimum 24 Baselines");
+    else if(configuration.levels+1==level)
+    $('#modalmsg').text("Use drag and drop to arrange these baselines in the order of importance they hold for you" );
+    else
+    $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines');           
+    $("#myModal").modal('show');
+ }
+//--------------------------------------------------------------------------------------------
 function updateStatusLevel()
 {
     selected = 0 ;
@@ -19,42 +41,13 @@ function updateStatusLevel()
             }
         }
 }
-
 //----------------------------------------------------------------------------------
-
-
-
-//-----------------------------------------------------------------------------------
-
-function baseLine(i){
-    var property = document.getElementById('qual_'+i);
-    if(configuration.levelDetails[level-1].rule=="exact" && baseLines[i].Status==0 && configuration.levelDetails[level-1].count==selected)
-        return;
-    if(baseLines[i].Status==0)
-    {   property.style.backgroundColor="#00cc00"
-        baseLines[i].Status=1;
-        selected++;
-        $("#currentCount").text(selected+levelCount());
-    }
-    else if(baseLines[i].Status==1)
-    {
-        property.style.backgroundColor="#0000FF"
-        baseLines[i].Status=0;
-    selected--;
-    $("#currentCount").text(selected+levelCount());
-    }
-}
-
-//-----------------------------functions used within another functions-----------------------
-
 function levelCount(){
     if (configuration.levelDetails[level-1].rule=="minimum")
     return "/"+baseLinesLength;
     return "/"+configuration.levelDetails[level-1].count;
 }
-
-//--------------------------------------------------------------------------------------
-
+//-----------------------------sorting the data lexicographically comming from api------------------------------------------------------
 function dynamicSort(property) {
     var sortOrder = 1;
 
@@ -71,9 +64,7 @@ function dynamicSort(property) {
         }        
     }
 }
-
-//------------------------------------------------------------------------------------------------------
-
+//-----------------------------------------------------------------------------------------------
 function removeBaseLines(){
     var element;
     for(i = 0 ; i<baseLinesLength ; i++)
@@ -90,6 +81,7 @@ function removeBaseLines(){
 //---------------------------------------------------------------------------------------------
 
 }
+//--------------------------------------------------------------------------------------
 function rebootAdd(){
     for (i = 0; i<baseLinesLength; i++) {
         if(baseLines[i].Level==level)
@@ -98,9 +90,7 @@ function rebootAdd(){
    
 
 }
-
-//------------------------------------------------------------------------------------------
-
+//------------------------------------------------------------------------------------------------------
 function levelCheck()
 {
     
@@ -116,18 +106,16 @@ function levelCheck()
     return "false";
     
 }
-
 //------------------------------------------------------------------------------------------
-
-function sumbitOrdering(){
-    document.getElementById("titleHead").textContent="Arrange Baselines";
-    var x = document.getElementById("Submit_Initial");
+function submitOrdering(){
+    document.getElementById("titleHead").textContent="Order your qualities ";
+    var x = submitInitialElement;
     x.style.display = "none";
-    var n = document.getElementById("Submit_Final");
+    var n = submitFinalElement;
     n.style.display = "block";
-    var m = document.getElementById("orderit");
+    var m = orderElement;
     m.style.display = "block";
-    var m = document.createElement("UL");
+    var m = createElement ;
     for(i=0;i<baseLinesLength;i++)
     {
         if(baseLines[i].Level==level)
@@ -140,3 +128,11 @@ function sumbitOrdering(){
 $(function() {
     $( "#sortable_quality" ).sortable();
  });
+ //------------------------------------------------------------------------------------
+ function updateTable()
+{
+    var idsInOrder = $("#sortable_quality").sortable("toArray");
+    for(i=0;i<idsInOrder.length;i++)
+    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Quality+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
+
+}

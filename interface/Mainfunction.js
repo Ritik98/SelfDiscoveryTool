@@ -1,16 +1,12 @@
 function popupMsg(){
-        if(level==1)
-        $('#modalmsg').text("Select as many words as you resonate with");
-        else if(configuration.levels+1==level)
-        $('#modalmsg').text("Use drag and drop to arrange these baselines in the order of importance they hold for you" );
-        else
-        $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines');           
-
-        $("#myModal").modal('show');
+    popup();
+       
 }
 popupMsg();
+
+ 
 //-------------------------------------------------------------------------------------------
-function submitInitial(){
+function submitNextLevel(){
     if( levelCheck()=="true")
     {
         removeBaseLines();
@@ -23,23 +19,33 @@ function submitInitial(){
         }
         else
         {
-        sumbitOrdering();
+        submitOrdering();
         }
  
     }
  }
  //-----------------------------------------------------------------------------------------
- function submitFinal()
+ function displayOutcome()
  {
     document.getElementById("titleHead").textContent="Congratulations!!!, This is who you are";
-    var x = orderElement;
-    x.style.display = "none";
-    var m = finalTableElement;
-    m.style.display = "block";
-    var n = submitFinalElement;
-    n.style.display = "none";
-    var idsInOrder = $("#sortable_quality").sortable("toArray");
-    for(i=0;i<idsInOrder.length;i++)
-    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Quality+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
-
+    displayTable();
+    updateTable();
+}
+function baseLine(i){
+    var property = document.getElementById('qual_'+i);
+    if(configuration.levelDetails[level-1].rule=="exact" && baseLines[i].Status==0 && configuration.levelDetails[level-1].count==selected)
+        return;
+    if(baseLines[i].Status==0)
+    {   property.style.backgroundColor="#00cc00"
+        baseLines[i].Status=1;
+        selected++;
+        $("#currentCount").text(selected+levelCount());
+    }
+    else if(baseLines[i].Status==1)
+    {
+        property.style.backgroundColor="#0000FF"
+        baseLines[i].Status=0;
+    selected--;
+    $("#currentCount").text(selected+levelCount());
+    }
 }
