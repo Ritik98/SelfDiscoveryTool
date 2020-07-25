@@ -2,14 +2,22 @@
 
 
 //-------------------------------------------------------------------------------------------
+function removeElementView(x)
+{
+    x.style.display = "none";
+}
+//-------------------------------------------------------------------------------------------
+function addElementView(x)
+{
+    x.style.display = "block";
+
+}
+//-------------------------------------------------------------------------------------------
 function displayTable()
 {
-    var x = orderElement;
-    x.style.display = "none";
-    var m = finalTableElement;
-    m.style.display = "block";
-    var n = submitFinalElement;
-    n.style.display = "none";
+    removeElementView(orderElement);
+    addElementView(finalTableElement);
+    removeElementView(submitFinalElement);
 }
 //-------------------------------------------------------------------------------------------
 function displayCount()
@@ -85,7 +93,7 @@ function removeBaseLines(){
 function rebootAdd(){
     for (i = 0; i<baseLinesLength; i++) {
         if(baseLines[i].Level==level)
-        $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Quality+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu">'+baseLines[i].Meaning+'</div></div>');
+        $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Object+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu">'+baseLines[i].Meaning+'</div></div>');
     }
    
 
@@ -109,18 +117,15 @@ function levelCheck()
 //------------------------------------------------------------------------------------------
 function submitOrdering(){
     document.getElementById("titleHead").textContent="Order your qualities ";
-    var x = submitInitialElement;
-    x.style.display = "none";
-    var n = submitFinalElement;
-    n.style.display = "block";
-    var m = orderElement;
-    m.style.display = "block";
+    removeElementView(submitInitialElement);
+    addElementView(submitFinalElement);
+    addElementView(orderElement);
     var m = createElement ;
     for(i=0;i<baseLinesLength;i++)
     {
         if(baseLines[i].Level==level)
         {
-            $("#sortable_quality").append('<li id="'+i+'">'+baseLines[i].Quality+'</li>');
+            $("#sortable_quality").append('<li id="'+i+'">'+baseLines[i].Object+'</li>');
         }
     }
 }
@@ -133,6 +138,6 @@ $(function() {
 {
     var idsInOrder = $("#sortable_quality").sortable("toArray");
     for(i=0;i<idsInOrder.length;i++)
-    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Quality+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
+    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Object+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
 
 }

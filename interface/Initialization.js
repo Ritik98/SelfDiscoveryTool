@@ -17,13 +17,13 @@ const createElement = document.createElement("UL");
 //Calling API and creating all the baseLines buttons with values
 $(document).ready(function() {
     $.ajax({
-        url: "https://cn80zv9qg7.execute-api.ap-south-1.amazonaws.com/dev"
+        url: "https://la7dktbhq0.execute-api.ap-south-1.amazonaws.com/dev/baselines?Category=Baselines"
     }).then(function(data) {
-        data.sort(dynamicSort("Quality"));
+        data.sort(dynamicSort("Object"));
         baseLines=data;
         baseLinesLength=baseLines.length;
         for (i = 0; i<baseLinesLength; i++) {
-            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Quality+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
+            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Object+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
             $("#currentCount").text(selected+  "/" + baseLinesLength);
 
         }
