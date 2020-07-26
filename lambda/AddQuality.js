@@ -7,13 +7,15 @@ exports.handler = async (event) => {
     // Extract values from event and format as strings
     let name = (`${event.qualityName}`);
     let desc= (`${event.qualityDesc}`);
+    let catg= (`${event.qualityCatg}`);
     let msg = JSON.stringify(`Your quality ${event.qualityName} with meaning ${event.qualityDesc} is recorded`);
 
     // Create JSON object with parameters for DynamoDB and store in a variable
     let params = {
-        TableName:'Baselines',
+        TableName:'BaseLines',
         Item: {
-            'Quality': name,
+            'Category':catg,
+            'Object': name,
             'Meaning': desc,
             'Status':'0',
             'Level':'1'

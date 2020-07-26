@@ -5,6 +5,9 @@
 #Submit_Initial, #Submit_Final{
     color:white;
 }
+#modalmsg{
+    white-space: pre;
+}
 #icon{
     width:25%;
 }
