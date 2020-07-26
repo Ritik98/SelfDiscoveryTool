@@ -22,9 +22,9 @@ function popup()
     if(level==1)
         $('#modalmsg').text("Select as many words as you resonate with (minimum " + configuration.levelDetails[level-1].count + ")");
     else if(configuration.levels+1==level)
-    $('#modalmsg').text("Use drag and drop to arrange these "+ configuration.category + " in the order of importance they hold for you" );
+    $('#modalmsg').text("Use drag and drop to arrange these "+ configuration.title + " in the order of importance they hold for you" );
     else
-    $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' ' +configuration.category);           
+    $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' ' +configuration.title);           
     $("#myModal").modal('show');
  }
 //------------------------------------------------------------------------------------
