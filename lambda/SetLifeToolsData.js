@@ -5,18 +5,19 @@ let dynamodb = new AWS.DynamoDB.DocumentClient();
 // We receive the object that triggers the function as a parameter
 exports.handler = async (event) => {
     // Extract values from event and format as strings
-    let name = (`${event.qualityName}`);
-    let desc= (`${event.qualityDesc}`);
-    let catg= (`${event.qualityCatg}`);
-    let msg = JSON.stringify(`Your quality ${event.qualityName} with meaning ${event.qualityDesc} is recorded`);
+    let property = (`${event.property}`);
+    let description= (`${event.description}`);
+    let category = (`${event.category}`);
+    
+    let msg = JSON.stringify(`Added Property ${event.property} having description ${event.description}`);
 
     // Create JSON object with parameters for DynamoDB and store in a variable
     let params = {
-        TableName:'BaseLines',
+        TableName:'LifeToolsDataSet',
         Item: {
-            'Category':catg,
-            'Object': name,
-            'Meaning': desc,
+            'Property': property,
+            'Meaning': description,
+            'Category': category,
             'Status':'0',
             'Level':'1'
         }

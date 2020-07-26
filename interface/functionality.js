@@ -20,11 +20,11 @@ function dynamicSort(property) {
 function popup()
  {
     if(level==1)
-    $('#modalmsg').text("Select as many words as you resonate with");
+        $('#modalmsg').text("Select as many words as you resonate with (minimum " + configuration.levelDetails[level-1].count + ")");
     else if(configuration.levels+1==level)
-    $('#modalmsg').text("Use drag and drop to arrange these baselines in the order of importance they hold for you" );
+    $('#modalmsg').text("Use drag and drop to arrange these "+ configuration.title + " in the order of importance they hold for you" );
     else
-    $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines');           
+    $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' ' +configuration.title);           
     $("#myModal").modal('show');
  }
 //------------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ function updateStatusLevel()
 function rebootAdd(){
     for (i = 0; i<baseLinesLength; i++) {
         if(baseLines[i].Level==level)
-        $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Object+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu">'+baseLines[i].Meaning+'</div></div>');
+        $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Property+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu">'+baseLines[i].Meaning+'</div></div>');
     }
    
 
@@ -89,7 +89,7 @@ function displayCount()
 }
 //--------------------------------------------------------------------------------
 function submitOrdering(){
-    document.getElementById("titleHead").textContent="Order your qualities ";
+    document.getElementById("titleHead").textContent="Arrange Your " + configuration.title;
     removeElementView(submitInitialElement);
     addElementView(submitFinalElement);
     addElementView(orderElement);
@@ -98,7 +98,7 @@ function submitOrdering(){
     {
         if(baseLines[i].Level==level)
         {
-            $("#sortable_quality").append('<li id="'+i+'">'+baseLines[i].Object+'</li>');
+            $("#sortable_quality").append('<li id="'+i+'">'+baseLines[i].Property+'</li>');
         }
     }
 }
@@ -114,7 +114,7 @@ function updateTable()
 {
     var idsInOrder = $("#sortable_quality").sortable("toArray");
     for(i=0;i<idsInOrder.length;i++)
-    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Object+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
+    $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Property+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
 
 }
 //-----------------------------------------------------------------------

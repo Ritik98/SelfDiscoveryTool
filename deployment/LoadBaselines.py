@@ -6,15 +6,13 @@ dictionary=PyDictionary()
 quality = open(sys.argv[1])
 desc=''
 temp= quality.readlines()
+API_ENDPOINT  = 'YOUR API ENDPOINT'
 for x in range(len(temp)):
-    name=temp[x].rstrip("\n")
-    try:
-        meaning = dictionary.meaning(name)
-        for x in meaning.values():
-            desc=x[0]
-    except:
-        desc=""
-    data = {"qualityName":name, "qualityDesc":desc,"qualityCatg": "Baselines"}
-    requests.post('https://la7dktbhq0.execute-api.ap-south-1.amazonaws.com/dev/baselines',data=json.dumps(data))
-      
-
+    line=temp[x].rstrip("\n")
+    vals = line.split(sep=',' )
+    name = vals[0]
+    desc = vals[1]
+    data = {"category":"Baselines" , "property":name, "description":desc}
+    listToStr = ','.join([str(elem) for elem in data.values()])
+    #print(listToStr)    
+    r = requests.post(API_ENDPOINT,data=json.dumps(data))
