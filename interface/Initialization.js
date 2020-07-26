@@ -19,6 +19,7 @@ const createElement = document.createElement("UL");
 //-------------------------------------------------------------------------------------------
 //Calling API and creating all the baseLines buttons with values
 $(document).ready(function() {
+    document.getElementById("titleHead").textContent="Select Your " + configuration.title;
 	url = configuration.url + "?category=" + configuration.category;
 
 	$.ajax({
