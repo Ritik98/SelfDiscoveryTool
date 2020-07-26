@@ -2,40 +2,64 @@
 
 
 //-------------------------------------------------------------------------------------------
-function removeElementView(x)
-{
-    x.style.display = "none";
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        if(sortOrder == -1){
+            return b[property].localeCompare(a[property]);
+        }else{
+            return a[property].localeCompare(b[property]);
+        }        
+    }
 }
-//-------------------------------------------------------------------------------------------
-function addElementView(x)
-{
-    x.style.display = "block";
-
-}
-//-------------------------------------------------------------------------------------------
-function displayTable()
-{
-    removeElementView(orderElement);
-    addElementView(finalTableElement);
-    removeElementView(submitFinalElement);
-}
-//-------------------------------------------------------------------------------------------
-function displayCount()
-{
-    $("#currentCount").text(selected+levelCount());
-}
-//------------------------------popping up the message , giving instuction to user--------------------------------------------------------------
+//------------------------------------------------------------------------------------
 function popup()
  {
     if(level==1)
-    $('#modalmsg').text("Select as many words as you resonate with" + "\n\n" + "Note : Select minimum 24 Baselines");
+    $('#modalmsg').text("Select as many words as you resonate with");
     else if(configuration.levels+1==level)
     $('#modalmsg').text("Use drag and drop to arrange these baselines in the order of importance they hold for you" );
     else
     $('#modalmsg').text('Select '+ configuration.levelDetails[level-1].rule + ' '+ configuration.levelDetails[level-1].count + ' Baselines');           
     $("#myModal").modal('show');
  }
-//--------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+function levelCheck()
+{
+    
+    if(configuration.levelDetails[level-1].rule=="minimum")
+    {
+        if(configuration.levelDetails[level-1].count<=selected)
+         return "true";
+    }
+     else if(configuration.levelDetails[level-1].rule=="exact")
+    {
+        if(configuration.levelDetails[level-1].count==selected)
+        return "true";
+    }
+    else
+    return "false";
+    
+}
+//-----------------------------------------------------------------------------------
+function removeBaseLines(){
+    var element;
+    for(i = 0 ; i<baseLinesLength ; i++)
+    {
+        if(baseLines[i].Level==level)
+    { 
+        element = document.getElementById('qual_'+i);    
+        element.parentNode.removeChild(element);
+        element = document.getElementById('qualmeaning_'+i);
+        element.parentNode.removeChild(element);
+    }
+}
+}
+//----------------------------------------------------------------------------------------
 function updateStatusLevel()
 {
     selected = 0 ;
@@ -49,46 +73,6 @@ function updateStatusLevel()
             }
         }
 }
-//----------------------------------------------------------------------------------
-function levelCount(){
-    if (configuration.levelDetails[level-1].rule=="minimum")
-    return "/"+baseLinesLength;
-    return "/"+configuration.levelDetails[level-1].count;
-}
-//-----------------------------sorting the data lexicographically comming from api------------------------------------------------------
-function dynamicSort(property) {
-    var sortOrder = 1;
-
-    if(property[0] === "-") {
-        sortOrder = -1;
-        property = property.substr(1);
-    }
-
-    return function (a,b) {
-        if(sortOrder == -1){
-            return b[property].localeCompare(a[property]);
-        }else{
-            return a[property].localeCompare(b[property]);
-        }        
-    }
-}
-//-----------------------------------------------------------------------------------------------
-function removeBaseLines(){
-    var element;
-    for(i = 0 ; i<baseLinesLength ; i++)
-    {
-        if(baseLines[i].Level==level)
-    { 
-        element = document.getElementById('qual_'+i);    
-        element.parentNode.removeChild(element);
-        element = document.getElementById('qualmeaning_'+i);
-        element.parentNode.removeChild(element);
-    }
-}
-
-//---------------------------------------------------------------------------------------------
-
-}
 //--------------------------------------------------------------------------------------
 function rebootAdd(){
     for (i = 0; i<baseLinesLength; i++) {
@@ -98,23 +82,12 @@ function rebootAdd(){
    
 
 }
-//------------------------------------------------------------------------------------------------------
-function levelCheck()
+//-------------------------------------------------------------------------------
+function displayCount()
 {
-    
-    if(configuration.levelDetails[level-1].rule=="minimum")
-    {if(configuration.levelDetails[level-1].count<=selected)
-    return "true";
-    }
-     else if(configuration.levelDetails[level-1].rule=="exact")
-    {if(configuration.levelDetails[level-1].count==selected)
-    return "true";
-    }
-    else
-    return "false";
-    
+    $("#currentCount").text(selected+levelCount());
 }
-//------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 function submitOrdering(){
     document.getElementById("titleHead").textContent="Order your qualities ";
     removeElementView(submitInitialElement);
@@ -129,15 +102,58 @@ function submitOrdering(){
         }
     }
 }
-//--------------------------------------------------------------------------------------------
-$(function() {
-    $( "#sortable_quality" ).sortable();
- });
- //------------------------------------------------------------------------------------
- function updateTable()
+//-----------------------------------------------
+function displayTable()
+{
+    removeElementView(orderElement);
+    addElementView(finalTableElement);
+    removeElementView(submitFinalElement);
+}
+//---------------------------------------------------------------------------
+function updateTable()
 {
     var idsInOrder = $("#sortable_quality").sortable("toArray");
     for(i=0;i<idsInOrder.length;i++)
     $("#addquality").append('<tr><th>'+baseLines[idsInOrder[i]].Object+'</th><th>'+baseLines[idsInOrder[i]].Meaning+'</th></tr>');
 
 }
+//-----------------------------------------------------------------------
+function updateSelection(i) {
+    var property = document.getElementById('qual_'+i);
+    if(configuration.levelDetails[level-1].rule=="exact" && baseLines[i].Status==0 && configuration.levelDetails[level-1].count==selected)
+    return;
+    if(baseLines[i].Status==0)
+    {   property.style.backgroundColor="#00cc00"
+        baseLines[i].Status=1;
+        selected++;
+        $("#currentCount").text(selected+levelCount());
+    }
+    else if(baseLines[i].Status==1)
+    {
+        property.style.backgroundColor="#0000FF"
+        baseLines[i].Status=0;
+        selected--;
+        $("#currentCount").text(selected+levelCount());
+    }
+}
+//------------------------------------------------------------------------------------------
+function removeElementView(x)
+{
+    x.style.display = "none";
+}
+//-------------------------------------------------------------------------------------------
+function addElementView(x)
+{
+    x.style.display = "block";
+}
+
+function levelCount(){
+    if (configuration.levelDetails[level-1].rule=="minimum")
+    return "/"+baseLinesLength;
+    return "/"+configuration.levelDetails[level-1].count;
+}
+//--------------------------------------------------------------------------------------------
+$(function() {
+    $( "#sortable_quality" ).sortable();
+ });
+ //------------------------------------------------------------------------------------
