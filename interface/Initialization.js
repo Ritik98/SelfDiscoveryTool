@@ -24,13 +24,13 @@ $(document).ready(function() {
 	$.ajax({
 	        url: url
     }).then(function(data) {
-        data.sort(dynamicSort("Object"));
+        data.sort(dynamicSort("Property"));
         baseLines=data;
         baseLinesLength=baseLines.length;
         for (i = 0; i<baseLinesLength; i++) {
-            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Object+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
+            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Property+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
             $("#currentCount").text(selected+  "/" + baseLinesLength);
 
         }
-    });
+});
 });
