@@ -1,6 +1,9 @@
 var baseLines,baseLinesLength,i,selected=0,level=1;
 var configuration = {
-	branding: {"name" : "XYZ cmpany" , "title" : "select you codes"},
+	branding: {"name" : "Wings2Life" },
+	title: "Values",
+	category: "Baselines",
+	url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
 	levels : 3,
 	levelDetails: [{count:24 ,rule: "minimum" }, 
 				   {count:24, rule: "exact"},
@@ -16,8 +19,10 @@ const createElement = document.createElement("UL");
 //-------------------------------------------------------------------------------------------
 //Calling API and creating all the baseLines buttons with values
 $(document).ready(function() {
-    $.ajax({
-        url: "https://la7dktbhq0.execute-api.ap-south-1.amazonaws.com/dev/baselines?Category=Baselines"
+	url = configuration.url + "?category=" + configuration.category;
+
+	$.ajax({
+	        url: url
     }).then(function(data) {
         data.sort(dynamicSort("Object"));
         baseLines=data;
