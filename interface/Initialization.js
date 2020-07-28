@@ -1,14 +1,24 @@
 var baseLines,baseLinesLength,i,selected=0,level=1;
-var configuration = {
-	branding: {"name" : "Wings2Life" },
-	title: "Values",
-	category: "Baselines",
-	url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
-	levels : 3,
-	levelDetails: [{count:24 ,rule: "minimum" }, 
-				   {count:24, rule: "exact"},
-                   {count:6, rule: "exact"}]
+var configuration = {};
+
+if (typeof site_configuration !== 'undefined') {
+    // the variable is defined
+	configuration = site_configuration;
+} else {
+	
+	configuration = {
+		branding: {"name" : "Wings2Life" },
+		title: "Values",
+		category: "Baselines",
+		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
+		levels : 3,
+		levelDetails: [{count:24 ,rule: "minimum" }, 
+					   {count:24, rule: "exact"},
+					   {count:6, rule: "exact"}]
+	}
+	
 }
+
 //------------------------------------------------------------------------------------------
 //constant elements
 const orderElement= document.getElementById("orderit");
