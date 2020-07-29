@@ -7,14 +7,16 @@ if (typeof site_configuration !== 'undefined') {
 } else {
 	
 	configuration = {
-		branding: {"name" : "Wings2Life" },
-		title: "Values",
+		branding: {"name" : "SkillPill" },
+		title: "Qualities",
 		category: "Baselines",
 		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
-		levels : 3,
-		levelDetails: [{count:24 ,rule: "minimum" }, 
-					   {count:24, rule: "exact"},
-					   {count:6, rule: "exact"}]
+		levels : 5,
+		levelDetails: [{count:8 ,rule: "minimum" }, 
+					   {count:6, rule: "exact"},
+					   {count:5, rule: "exact"},
+					   {count:4, rule: "exact"},
+					   {count:3, rule: "exact"}]
 	}
 	
 }
