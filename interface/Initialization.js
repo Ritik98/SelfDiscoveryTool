@@ -7,9 +7,10 @@ if (typeof site_configuration !== 'undefined') {
 } else {
 	
 	configuration = {
-		branding: {"name" : "SkillPill" },
+		branding: [{"name" : "SkillPill" }],
 		title: "Qualities",
 		category: "Baselines",
+		icon: "images/wings2life.png",
 		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
 		levels : 5,
 		levelDetails: [{count:8 ,rule: "minimum" }, 
@@ -33,7 +34,8 @@ const createElement = document.createElement("UL");
 $(document).ready(function() {
     document.getElementById("titleHead").textContent="Select Your " + configuration.title;
 	url = configuration.url + "?category=" + configuration.category;
-
+	$('.logo').attr("src",configuration.icon);
+	$('#popHead').text(configuration.branding[0].name);
 	$.ajax({
 	        url: url
     }).then(function(data) {
