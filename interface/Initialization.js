@@ -10,14 +10,13 @@ if (typeof site_configuration !== 'undefined') {
 		branding: [{"name" : "SkillPill" }],
 		title: "Qualities",
 		category: "Baselines",
-		icon: "images/wings2life.png",
+		icon: "images/skillpill.png",
 		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
 		levels : 5,
-		levelDetails: [{count:8 ,rule: "minimum" }, 
+		levelDetails: [{count:12 ,rule: "minimum" }, 
+					   {count:8, rule: "exact"},
 					   {count:6, rule: "exact"},
-					   {count:5, rule: "exact"},
-					   {count:4, rule: "exact"},
-					   {count:3, rule: "exact"}]
+					   {count:4, rule: "exact"}]
 	}
 	
 }
