@@ -8,6 +8,10 @@
 #modalmsg{
     white-space: pre;
 }
+.logo{
+    width:25%;
+}
+
 #icon{
     width:25%;
 }
