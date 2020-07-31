@@ -10,7 +10,7 @@ if (typeof site_configuration !== 'undefined') {
 		branding: [{"name" : "SkillPill" }],
 		title: "Qualities",
 		category: "Baselines",
-		icon: "images/skillpill.png",
+		icon: "images/skillpill.ico",
 		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
 		levels : 5,
 		levelDetails: [{count:12 ,rule: "minimum" }, 
