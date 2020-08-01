@@ -1,0 +1,5 @@
+- Code committed
+- Code is merged in master
+- Verified that the new update works 
+- Verified that new chnage does not break anything
+- Commit has comments that represent exactly why the change was done
