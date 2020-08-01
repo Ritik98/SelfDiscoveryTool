@@ -34,7 +34,7 @@ $(document).ready(function() {
     document.getElementById("titleHead").textContent="Select Your " + configuration.title;
 	url = configuration.url + "?category=" + configuration.category;
 	$('.logo').attr("src",configuration.icon);
-	$('#popHead').text(configuration.branding[0].name);
+	$('.popHead').text(configuration.branding[0].name);
 	$.ajax({
 	        url: url
     }).then(function(data) {
