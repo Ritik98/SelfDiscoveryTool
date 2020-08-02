@@ -12,7 +12,7 @@ function submitNextLevel(){
         removeBaseLines();
         updateStatusLevel();
         popupMsg();
-        if(configuration.levels>=level)
+        if(numLevel>=level)
         {
         rebootAdd();
         displayCount();

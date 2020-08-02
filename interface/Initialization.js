@@ -12,10 +12,9 @@ if (typeof site_configuration !== 'undefined') {
 		category: "Baselines",
 		icon: "images/skillpill.png",
 		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
-		levels : 4,
 		levelDetails: [{count:12 ,rule: "minimum" }, 
-					   {count:8, rule: "exact"},
-					   {count:6, rule: "exact"},
+					   /*{count:8, rule: "exact"},
+					   {count:6, rule: "exact"},*/
 					   {count:4, rule: "exact"}]
 	}
 	
@@ -28,6 +27,7 @@ const finalTableElement= document.getElementById("FinalTable");
 const submitFinalElement= document.getElementById("Submit_Final");
 const submitInitialElement = document.getElementById("Submit_Initial");
 const createElement = document.createElement("UL");
+const numLevel=configuration.levelDetails.length;
 //-------------------------------------------------------------------------------------------
 //Calling API and creating all the baseLines buttons with values
 $(document).ready(function() {
