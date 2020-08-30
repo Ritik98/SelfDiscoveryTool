@@ -11,8 +11,9 @@ const config = {
   heads:{"Welcome":"Select your Beliefs",
   "Ordering":"Prioritise your beliefs",
   "Result":"Congratulations these are your Beliefs"},
-  dropdown:true,
+  dropdown:false,
   tableheads:["Beliefs","Counter Belief"],
+  cbelief:true,
   popup:[
     "Select as many beliefs as you resonate with",
     "Use drag and drop to arrange these Beliefs in the order of importance they hold for you"

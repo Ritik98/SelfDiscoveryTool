@@ -162,7 +162,7 @@ class App extends Component {
     if (this.state.dragdrop)
       drgdrp= <DragDrop data={this.state.drgdrpset} ondrag={newState => {this.setState({ drgdrpset: newState })}}/>;
     if (this.state.tableset)
-      tblst= <TableSet data={this.state.drgdrpset} heads={this.state.config.tableheads}/>;
+      tblst= <TableSet data={this.state.drgdrpset} heads={this.state.config.tableheads} check={this.state.config.cbelief}/>;
     return (<div>
     <Header logo={this.state.config.icon} title={this.state.titlehead}/>
     <PopUp isOpen={this.state.modal} toggle={this.toggle} logo={this.props.initial.icon} title={this.state.config.branding.name} msg={this.state.msg}/>
