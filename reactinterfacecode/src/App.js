@@ -65,7 +65,7 @@ class App extends Component {
   }
   updateSelection(i){
     let property = document.getElementById('qual_'+i);
-    if(this.state.config.levelDetails[this.state.level-1].rule==="exact" && this.state.item[i].Status==='0' && this.state.config.levelDetails[this.state.level-1].count===this.state.selected){
+    if(this.state.config.levelDetails[this.state.level-1].rule==="exactly" && this.state.item[i].Status==='0' && this.state.config.levelDetails[this.state.level-1].count===this.state.selected){
       alert("You can't select more than "+this.state.selected+" beliefs");
       return;
     }
@@ -91,7 +91,7 @@ class App extends Component {
     {
          return "true";
     }
-     else if(this.state.config.levelDetails[this.state.level-1].rule==="exact" && this.state.config.levelDetails[this.state.level-1].count===this.state.selected)
+     else if(this.state.config.levelDetails[this.state.level-1].rule==="exactly" && this.state.config.levelDetails[this.state.level-1].count===this.state.selected)
     {
         return "true";
     }
@@ -158,11 +158,11 @@ class App extends Component {
   render() {
     let btngrp,drgdrp,tblst;
     if (this.state.buttongroup)
-      btngrp = <DataSet item={this.state.item} onClick={(i) => this.updateSelection(i)} level={this.state.level} enablemeaning={this.state.config.dropdown}/>;
+      btngrp = <DataSet item={this.state.item} onClick={(i) => this.updateSelection(i)} level={this.state.level} enablemeaning={this.state.config.display.dropdown}/>;
     if (this.state.dragdrop)
       drgdrp= <DragDrop data={this.state.drgdrpset} ondrag={newState => {this.setState({ drgdrpset: newState })}}/>;
     if (this.state.tableset)
-      tblst= <TableSet data={this.state.drgdrpset} heads={this.state.config.tableheads} check={this.state.config.cbelief}/>;
+      tblst= <TableSet data={this.state.drgdrpset} heads={this.state.config.tableheads} check={this.state.config.display.meaning_in_table}/>;
     return (<div>
     <Header logo={this.state.config.icon} title={this.state.titlehead}/>
     <PopUp isOpen={this.state.modal} toggle={this.toggle} logo={this.props.initial.icon} title={this.state.config.branding.name} msg={this.state.msg}/>

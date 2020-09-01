@@ -3,6 +3,9 @@
   height: max-content;
   max-width: max-content;
 }
+.dropdown-header {
+  white-space: normal;
+}
 .navbar-brand {
   display: inline-flex;
   white-space: normal;

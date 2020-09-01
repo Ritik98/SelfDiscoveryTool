@@ -5,27 +5,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-const config = {
-  branding: {"name" : "SkillPill" },
-  heads:{"Welcome":"Select your Beliefs",
-  "Ordering":"Prioritise your beliefs",
-  "Result":"Congratulations these are your Beliefs"},
-  dropdown:false,
-  tableheads:["Beliefs","Counter Belief"],
-  cbelief:true,
-  popup:[
-    "Select as many beliefs as you resonate with",
-    "Use drag and drop to arrange these Beliefs in the order of importance they hold for you"
-  ],
-	title: "Beliefs",
-	category: "Baselines",
-	icon: "./skillpill.png",
-  apiUrl: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset?category=Baselines",
-	levelDetails: [{count:3 ,rule: "minimum" }, 
-				   {count:2, rule: "exact"},
-                   {count:1, rule: "exact"}]
+import site_config from './env';
+var config;
+if (typeof site_config !== 'undefined') {
+  // the variable is defined
+  config = site_config;
+}
+else{
+  config = {
+    branding: {"name" : "SkillPill" },
+    heads:{"Welcome":"Select your Beliefs",
+    "Ordering":"Prioritise your beliefs",
+    "Result":"Congratulations these are your Beliefs"},
+    tableheads:["Beliefs","Counter Belief"],
+    display:{"dropdown":false, "meaning_in_table":false},
+    popup:[
+      "Select as many beliefs as you resonate with",
+      "Use drag and drop to arrange these Beliefs in the order of importance they hold for you"
+    ],
+    title: "Beliefs",
+    category: "Baselines",
+    icon: "./skillpill.png",
+    apiUrl: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset?category=Baselines",
+    levelDetails: [
+      {count:5 ,rule: "minimum" },{count:4, rule: "exactly"},
+                    {count:3, rule: "exactly"}]
 };
+}
 
 ReactDOM.render(
   <React.StrictMode>
