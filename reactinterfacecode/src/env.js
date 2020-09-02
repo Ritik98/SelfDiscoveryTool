@@ -15,6 +15,6 @@ export default site_config = {
     icon: "./wings2life.png",
     apiUrl: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset?category=NCodes",
     levelDetails: [
-      {count:24 ,rule: "minimum" },{count:24, rule: "exactly"},
+      {count:6 ,rule: "minimum" },{count:6, rule: "exactly"},
                     {count:6, rule: "exactly"}]
 };
