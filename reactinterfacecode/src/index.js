@@ -18,7 +18,7 @@ else{
     "Ordering":"Prioritise your beliefs",
     "Result":"Congratulations these are your Beliefs"},
     tableheads:["Beliefs","Counter Belief"],
-    display:{"dropdown":false, "meaning_in_table":false},
+    display:{"dropdown":true, "meaning_in_table":true},
     popup:[
       "Select as many beliefs as you resonate with",
       "Use drag and drop to arrange these Beliefs in the order of importance they hold for you"
