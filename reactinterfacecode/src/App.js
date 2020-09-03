@@ -22,6 +22,7 @@ class App extends Component {
       buttongroup:true,
       dragdrop:false,
       tableset:false,
+      submit:true,
       drgdrpset:[]
     };
     this.toggle=this.toggle.bind(this);
@@ -132,6 +133,7 @@ class App extends Component {
       testItem.titlehead=testItem.config.heads.Result;
       testItem.tableset= true;
       testItem.dragdrop=false;
+      testItem.submit=false;
       this.setState(testItem);
     }
   }
@@ -156,20 +158,22 @@ class App extends Component {
 
 
   render() {
-    let btngrp,drgdrp,tblst;
+    let btngrp,drgdrp,tblst,sbmt;
     if (this.state.buttongroup)
       btngrp = <DataSet item={this.state.item} onClick={(i) => this.updateSelection(i)} level={this.state.level} enablemeaning={this.state.config.display.dropdown}/>;
     if (this.state.dragdrop)
       drgdrp= <DragDrop data={this.state.drgdrpset} ondrag={newState => {this.setState({ drgdrpset: newState })}}/>;
     if (this.state.tableset)
       tblst= <TableSet data={this.state.drgdrpset} heads={this.state.config.tableheads} check={this.state.config.display.meaning_in_table}/>;
+    if(this.state.submit)
+    sbmt= <Submit onclick={this.submit} msg={this.state.selectedoutof}/>
     return (<div>
     <Header logo={this.state.config.icon} title={this.state.titlehead}/>
     <PopUp isOpen={this.state.modal} toggle={this.toggle} logo={this.props.initial.icon} title={this.state.config.branding.name} msg={this.state.msg}/>
     {btngrp}
     {drgdrp}
     {tblst}
-    <Submit onclick={this.submit} msg={this.state.selectedoutof}/>
+    {sbmt}
     </div>
     )}
 }
