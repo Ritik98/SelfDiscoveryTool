@@ -3,8 +3,34 @@
   height: max-content;
   max-width: max-content;
 }
+.header {
+  position: fixed;
+  width: 100%;
+  padding:10px;
+  font-size:large;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  left:0;
+  display:flex;
+  flex-wrap: nowrap;
+  background-color: black;
+}
+.fixed-top{
+  max-height: 85px;
+}
 .dropdown-header {
   white-space: normal;
+}
+.navbar{
+  padding: 0px;
+  background-color: black;
+}
+a{
+  color:white;
+}
+.btn-block{
+  background-color: black;
 }
 .navbar-brand {
   display: inline-flex;
@@ -14,9 +40,6 @@
   margin: 10px;
   margin-left: 0px;
   background-color: #0000FF;
-}
-#logo {
-  padding:10px;
 }
 #heading {
   padding-top: 15px;
@@ -28,15 +51,17 @@
   padding-top: 150px;
 }
 .drgdrpdiv{
-  width:50%;
+  width:80%;
   background-color: #0000FF;
   margin: auto;
-  margin-bottom: 5px;
+  border: 1px solid white;
   min-height:30px;
   text-align: center;
   color: white;
+  height:50px;
+  font-size: x-large; 
+  padding-top: 5px;
 }
-
 body {
   background-color: hsl(0,0%,80%);
 }

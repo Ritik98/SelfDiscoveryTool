@@ -58,6 +58,7 @@ class App extends Component {
       .then((data) => this.setState({item:data}));
     $("#favlogo").attr('href',this.state.config.icon);
     $("#title").text(this.state.config.branding.name);
+    
   }
   toggle(){
     this.setState({
