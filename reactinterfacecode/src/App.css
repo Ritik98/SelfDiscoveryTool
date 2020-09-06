@@ -16,6 +16,9 @@
   flex-wrap: nowrap;
   background-color: black;
 }
+#logo {
+  width: 25%;
+}
 .fixed-top{
   max-height: 85px;
 }
