@@ -1,0 +1,127 @@
+.App {
+  text-align: center;
+  height: max-content;
+  max-width: max-content;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  padding:10px;
+  font-size:large;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  left:0;
+  display:flex;
+  flex-wrap: nowrap;
+  background-color: black;
+}
+#logo {
+  width: 25%;
+}
+.fixed-top{
+  max-height: 85px;
+}
+.dropdown-header {
+  white-space: normal;
+}
+.navbar{
+  padding: 0px;
+  background-color: black;
+}
+a{
+  color:white;
+}
+.btn-block{
+  background-color: black;
+}
+.navbar-brand {
+  display: inline-flex;
+  white-space: normal;
+}
+.dropdown-toggle {
+  margin: 10px;
+  margin-left: 0px;
+  background-color: #0000FF;
+}
+#heading {
+  padding-top: 15px;
+}
+.tableset{
+  padding-top: 150px;
+}
+.dragdrop{
+  padding-top: 150px;
+}
+.drgdrpdiv{
+  width:80%;
+  background-color: #0000FF;
+  margin: auto;
+  border: 1px solid white;
+  min-height:30px;
+  text-align: center;
+  color: white;
+  height:50px;
+  font-size: x-large; 
+  padding-top: 5px;
+}
+body {
+  background-color: hsl(0,0%,80%);
+}
+.test {
+  padding-top: 150px;
+}
+.Footer {
+  padding-top: 150px;
+}
+.itemButton{
+  width:250px;
+  margin:10px;
+  margin-right: 0px;
+  background-color: #0000FF;
+}
+.itemGroup{
+  padding-top: 150px;
+  text-align: center;
+  max-width: 100%;
+}
+.btngrp {
+  width: 350px;
+  background-color: rgb(219, 101, 55);
+  color: white;
+  margin:10px;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

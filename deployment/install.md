@@ -5,13 +5,14 @@ Log on to console
 Make yourself comfortable with basic AWS competencies
 https://aws.amazon.com/getting-started/learning-path-full-stack-developer/
 
-Create a dynamodb table named "Baselines", and have a key named "Quality"
+Create a dynamodb table named "LifeToolsDataSet", and have a key named "Quality"
 
-Create a new Lambda Function to Push data in the Baselines table, using code from lambda/AddQuality.js
+Create a new Lambda Function 'SetLifeToolsData'  to Push data in the Baselines table, using code from lambda/SetLifeToolsData.js
 
 {
-  "qualityName": "TestBaseline",
-  "qualityDesc": "TestBaseline Description"
+  "property": "TestBaseline",
+  "description": "TestBaseline Description",
+  "category": "Baselines"
 }
 
 You should see this response 
@@ -22,7 +23,7 @@ Response:
   "body": "\"Your quality TestBaseline with meaning TestBaseline Description is recorded\""
 }
 
-Go to the dynamodb and delete all the records from Baselines table
+Go to the dynamodb and delete all the records from LifeToolsDataSet table
 
 Create a Post API using AWS API Gateway
 

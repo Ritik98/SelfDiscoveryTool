@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Wings2Life</title>
+    <title class='popHead'></title>
 </head>
 
 
@@ -15,8 +15,8 @@
 <!---------                                Header                                  ------------->
 
         <div class="header">
-			<div id="icon"><img src="images/wings2life.png"></div>
-            <div id="titleHead">Select Your Baselines</div>
+			<div id="icon"><img class='logo'></div>
+            <div id="titleHead"></div>
         </div>
 <!----------                              Modal message                              -------------->
 
@@ -25,7 +25,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"><span ><img src="images/wings2life.png"></span>Wings2Life</h4>
+                <h4 class="modal-title"><span ><img class='logo'></span><span class='popHead'></span></h4>
             </div>
             <div class="modal-body">
 				<p id="modalmsg"></p>
@@ -41,7 +41,8 @@
 
      
         <div class="main">
-            <div class="ordering" id="orderit">
+            <div class="ordering" id
+            ="orderit">
                 <ul id="sortable_quality"></ul>
             </div>
             <div class='table' id="FinalTable">
@@ -74,6 +75,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="env.js"></script>
     <script src="functionality.js"></script>
     <script src="Initialization.js"></script>
     <script src="Mainfunction.js"></script>

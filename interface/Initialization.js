@@ -1,11 +1,25 @@
 var baseLines,baseLinesLength,i,selected=0,level=1;
-var configuration = {
-	branding: {"name" : "XYZ cmpany" , "title" : "select you codes"},
-	levels : 3,
-	levelDetails: [{count:24 ,rule: "minimum" }, 
-				   {count:24, rule: "exact"},
-                   {count:6, rule: "exact"}]
+var configuration = {};
+
+if (typeof site_configuration !== 'undefined') {
+    // the variable is defined
+	configuration = site_configuration;
+} else {
+	
+	configuration = {
+		branding: [{"name" : "SkillPill" }],
+		title: "Qualities",
+		category: "Baselines",
+		icon: "images/skillpill.png",
+		url: "https://ix61k6qun9.execute-api.ap-southeast-1.amazonaws.com/prod/lifetoolsdataset",
+		levelDetails: [{count:12 ,rule: "minimum" }, 
+					   /*{count:8, rule: "exact"},
+					   {count:6, rule: "exact"},*/
+					   {count:4, rule: "exact"}]
+	}
+	
 }
+
 //------------------------------------------------------------------------------------------
 //constant elements
 const orderElement= document.getElementById("orderit");
@@ -13,19 +27,24 @@ const finalTableElement= document.getElementById("FinalTable");
 const submitFinalElement= document.getElementById("Submit_Final");
 const submitInitialElement = document.getElementById("Submit_Initial");
 const createElement = document.createElement("UL");
+const numLevel=configuration.levelDetails.length;
 //-------------------------------------------------------------------------------------------
 //Calling API and creating all the baseLines buttons with values
 $(document).ready(function() {
-    $.ajax({
-        url: "https://la7dktbhq0.execute-api.ap-south-1.amazonaws.com/dev/baselines?Category=Baselines"
+    document.getElementById("titleHead").textContent="Select Your " + configuration.title;
+	url = configuration.url + "?category=" + configuration.category;
+	$('.logo').attr("src",configuration.icon);
+	$('.popHead').text(configuration.branding[0].name);
+	$.ajax({
+	        url: url
     }).then(function(data) {
-        data.sort(dynamicSort("Object"));
+        data.sort(dynamicSort("Property"));
         baseLines=data;
         baseLinesLength=baseLines.length;
         for (i = 0; i<baseLinesLength; i++) {
-            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Object+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
+            $("#btn_grp").append('<div class="btn-group col-sm-2"><button type="button" class="Qual  btn " id="qual_'+i+'" onclick="baseLine('+i+')">'+baseLines[i].Property+'</button><button type="button" class="QualMeaning btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="qualmeaning_'+i+'"><span class="caret"></span></button><div class="dropdown-menu" id="dropdown">'+baseLines[i].Meaning+'</div></div>');
             $("#currentCount").text(selected+  "/" + baseLinesLength);
 
         }
-    });
+});
 });

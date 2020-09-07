@@ -5,9 +5,10 @@
 #Submit_Initial, #Submit_Final{
     color:white;
 }
-#modalmsg{
-    white-space: pre;
+.logo{
+    width:25%;
 }
+
 #icon{
     width:25%;
 }
